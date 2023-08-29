@@ -1,0 +1,256 @@
+:root{
+    --primary: #fac400;
+    --primary2: #dda900;
+    --secondary: #0c1431;
+    --secondary2: #010653;
+}
+/* fondo */
+body {
+    /*background: linear-gradient(to bottom, var(--secondary2) ,var(--secondary) ); */
+    background-image: url(img/el_real.jpg);
+    background-size: cover; /*ajusta el tamaño de la imagen al contenedor*/
+    background-repeat: no-repeat; /*evita que la imagen se repita*/
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.containerall{
+    padding: 20px;
+}
+h1{
+    color: var(--primary2);
+}
+h2{
+    color: #000000;
+}
+h3{
+    color: #000000;
+}
+h4{
+    color: #000000;
+}
+p{
+    color: #000000;
+}
+li{
+    color: #000000;
+}
+.mi-imagen {
+    width: auto; /* ajusta el ancho de la imagen */
+    max-width: 80vw;
+    height: auto; /* ajusta automáticamente la altura proporcionalmente */
+    display: flex; /* establece la imagen como un bloque para aplicar propiedades de posicionamiento */
+    margin: 0px 0px 0px 0px; /* centra horizontalmente la imagen */
+    position: relative; /* permite ajustar la posición de la imagen */
+}
+.boton_volver {/* botones de volver */
+    background-color: #3498db;
+    border: none;
+    color: white; /*color del texto*/
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Hace que el botón sea un elemento en línea */
+    font-size: 18px; /*tamaño del texto*/
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 30px;
+    user-select: none;
+}
+.boton_volver:hover {
+    transform: scale(1.1); /* Aplica un efecto de escala al 110% */
+}
+.banda-superior {
+    background-color: rgba(51, 51, 51, 0.6); /* Cambia el último valor (0.8) para ajustar la transparencia */
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    height: 60px; /* Ajusta la altura deseada de la banda */
+    box-sizing: border-box; /* Incluye el relleno en el cálculo de la altura */
+    text-align: center;
+    gap: 15px;
+}
+/* menu lateral */
+.container .btn-menu,.logo {
+    line-height: 100px;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+.container .btn-menu label { /* boton menu lateral */
+    color: #fff;
+    font-size: 29px;
+    cursor: pointer;
+    user-select: none;
+}
+.logo h1{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}
+.container .menu{
+    float: right;
+    line-height: 100px;
+}
+.container .menu a {
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.container .menu a:hover {
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+}
+/* Menù lateral */
+#btn-menu{
+    display: none;
+}
+.container-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5); /* color opaco menu lateral */
+    width: 100%;
+    height: 100vh; /* Altura igual a la altura completa de la ventana */
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.cont-menu{
+    width: 100%;
+    max-width: 250px; /*tamaño menu lateral*/
+    background: #1c1c1c; /*color menu lateral*/
+    height: 100vh;
+    position: relative;
+    transition: all 350ms ease; /*Animacion salida menu lateral*/
+    transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+}
+.cont-menu nav{
+    transform: translateY(15%);
+}
+.cont-menu nav a{ /*contenido menu lateral, texto*/
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+    user-select: none;
+}
+.cont-menu nav a:hover{
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+}
+.cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+/*Fin de Menù lateral*/
+input[type="checkbox"] {/*oculta el checkbox del menu lateral*/
+    display: none;
+}
+details{ /*menus de la calculadora de los movimientos*/
+    background: #99a7cf;
+    padding: 0.9rem;
+    margin: 0.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/*ejecicios*/
+.outer-container {
+    display: flex;
+    margin: 20px;
+}
+.container_ejercicio {
+    width: 100%;
+    padding: 20px;
+    border: 3px solid #000000;
+    border-radius: 15px;
+    background-color: #757575;
+}
+/*animaciones*/
+.animacion{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*animaciones mru y mrua*/
+  .container_a_mru {
+    width: 600px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.balldmru {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 75px;
+    left: 10%;
+    transform: translateX(-50%);  
+}
+.container_a_mrua {
+    width: 600px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.balldmrua {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 75px;
+    left: 10%;
+    transform: translateX(-50%);  
+}
+/*style de la animacion caida libre*/
+.container_a_cl {
+    width: 200px;
+    height: 400px;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.start-button {
+    margin-top: 20px;
+    cursor: pointer;
+}

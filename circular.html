@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulacion</title>
+  <script src="script.js"></script>
+  <script src="script/script_mc.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="banda-superior">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu" class="icon-menu">☰</label>
+        </div>
+      </div>
+      <h1>Movimiento circular</h1>
+    </div>
+  </header>
+
+<div class="containerall"> 
+  <div class="section">
+    <h1>Introducción</h1>
+    <p>El movimiento circular es un concepto fundamental en la física que describe el movimiento de un objeto en una trayectoria circular o curva. En este tipo de movimiento, un objeto se desplaza alrededor de un punto fijo, manteniendo una distancia constante.</p>
+  </div>
+
+  <div class="section">
+    <h1>Conceptos básicos</h1>
+    <h2>En el movimiento circular, existen varios conceptos clave:</h2>
+    <ul>
+      <li>Radio (r): Es la distancia desde el punto de rotación hasta el objeto en movimiento. Se mide en metros (m).</li>
+      <li>Velocidad angular (ω): Es la rapidez a la que el objeto se desplaza alrededor de la trayectoria circular. Se mide en radianes por segundo (rad/s).</li>
+      <li>Periodo (T): Es el tiempo que tarda el objeto en completar una vuelta completa alrededor de la trayectoria circular. Se mide en segundos (s).</li>
+      <li>Frecuencia (f): Es el número de vueltas completas que realiza el objeto en un segundo. Se mide en hercios (Hz).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h1>Fórmulas</h1>
+    <h2>En el movimiento circular, se utilizan las siguientes fórmulas:</h2>
+    <ul>
+      <li>Velocidad lineal (v): v = ω * r</li>
+      <li>Velocidad angular (ω): ω = 2π / T</li>
+      <li>Periodo (T): T = 2π / ω</li>
+      <li>Frecuencia (f): f = 1 / T</li>
+      <li>Aceleración centrípeta (ac): ac = ω^2 * r</li>
+    </ul>
+  </div>
+
+  <h1>Simulador de Movimiento Circular Uniforme (MCU)</h1>
+
+  <!-- Calculador de velocidad lineal -->
+  <details>
+    <summary>Calculador de velocidad lineal</summary>
+    <div class="section">
+      <li>Calculadora de Velocidad Lineal</li>
+      <form id="velocidadLinealForm" onsubmit="calcularVelocidadLineal(event)">
+        <label for="velocidadAngular">Velocidad angular (ω en rad/s):</label>
+        <input type="number" id="velocidadAngular" name="velocidadAngular">
+        <label for="radio">Radio (r en metros):</label>
+        <input type="number" id="radio" name="radio">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosVelocidadLineal"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de velocidad angular -->
+  <details>
+    <summary>Calculador de velocidad angular</summary>
+  <div class="section">
+    <li>Calculadora de Velocidad Angular</li>
+    <form id="velocidadAngularForm" onsubmit="calcularVelocidadAngular(event)">
+      <label for="periodo">Periodo (T en segundos):</label>
+      <input type="number" id="periodo" name="periodo">
+      <input type="submit" value="Calcular">
+    </form>
+    <div id="resultadosVelocidadAngular"></div>
+  </div>
+  </details>
+
+  <!-- Calculador de periodo -->
+  <details>
+    <summary>Calculador de periodo</summary>
+    <div class="section">
+      <li>Calculadora de Periodo</li>
+      <form id="periodoForm" onsubmit="calcularPeriodo(event)">
+        <label for="velocidadAngular">Velocidad angular (ω en rad/s):</label>
+        <input type="number" id="velocidadAngular_periodo" name="velocidadAngular_periodo">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosPeriodo"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de frecuencia -->
+  <details>
+    <summary>Calculador de frecuencia</summary>
+    <div class="section">
+      <li>Calculadora de Frecuencia</li>
+      <form id="frecuenciaForm" onsubmit="calcularFrecuencia(event)">
+        <label for="periodo_frecuencia">Periodo (T en segundos):</label>
+        <input type="number" id="periodo_frecuencia" name="periodo_frecuencia">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosFrecuencia"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de aceleración centrípeta -->
+  <details>
+    <summary>Calculador de aceleración centrípeta</summary>
+    <div class="section">
+      <li>Calculadora de Aceleración Centrípeta</li>
+      <form id="aceleracionCentripetaForm" onsubmit="calcularAceleracionCentripeta(event)">
+        <label for="velocidadAngular_ac">Velocidad angular (ω en rad/s):</label>
+        <input type="number" id="velocidadAngular_ac" name="velocidadAngular_ac">
+        <label for="radio_ac">Radio (r en metros):</label>
+        <input type="number" id="radio_ac" name="radio_ac">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosAceleracionCentripeta"></div>
+    </div>
+  </details>
+
+  <input type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
+        <a href='caida_libre.html'>Caída Libre</a>
+        <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
+        <a href='parabolico.html'>Movimiento Parabólico</a>
+        <a href='circular.html'>Movimiento Circular</a>
+      </nav>
+      <label for="btn-menu">✖️</label>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 1</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 2</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 3</h1>
+    </div>
+  </div>
+
+  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+  
+</div>
+</body>
+</html>

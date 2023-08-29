@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulacion</title>
+  <script src="script.js"></script>
+  <script src="script/script_cl.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+  <body>
+
+  
+  <header>
+    <div class="banda-superior">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu" class="icon-menu">☰</label>
+        </div>
+      </div>
+      <h1>Caida libre</h1>
+    </div>
+  </header>
+
+<div class="containerall">
+  <div class="section">
+    <h1>Introducción</h1>
+    <p>La caída libre es un concepto fundamental en la física que describe el movimiento de un objeto bajo la única influencia de la gravedad. En este tipo de movimiento, un objeto se deja caer desde una cierta altura y su posición varía en función del tiempo.</p>
+  </div>
+  
+  <div class="section">
+    <h1>Conceptos básicos</h1>
+    <h2>En la caída libre, existen varios conceptos clave:</h2>
+    <ul>
+      <li>Altura (h): Es la distancia vertical desde la cual se deja caer el objeto. Se mide en metros (m).</li>
+      <li>Tiempo (t): Es el intervalo de tiempo transcurrido desde el inicio de la caída. Se mide en segundos (s).</li>
+      <li>gravedad (g): Es la gravedad la que hace que los objetos caigan al suelo cuando los soltamos. Se mide en metros por segundo al cuadrado (m/s^2).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h1>Fórmulas</h1>
+    <h2>En la caída libre, se utiliza la siguiente fórmula para calcular la altura en función del tiempo:</h2>
+    <ul>
+      <li>Altura (h) = altura inicial (h0) - 0.5 * gravedad (g) * tiempo al cuadrado (t^2)</li>
+      <li>Altura máxima (h): h = (v0^2) / (2 * g)</li>
+      <li>Tiempo de vuelo (t): t = (2 * v0) / g</li>
+    </ul>
+  </div>
+  
+  <h1>Simulador de Movimiento de Caída Libre</h1>
+  
+  <!-- Calculador de altura -->
+  <details>
+    <summary>Calculador de Altura</summary>
+    <div class="section">
+      <li>Calculador de altura</li>
+      <form id="alturaForm" onsubmit="calcularAltura(event)">
+        <label for="tiempo">Tiempo (s):</label>
+        <input type="number" id="tiempo_caida" name="tiempo_caida" required>
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosAltura"></div>
+    </div>
+  </details>
+  
+  <!-- Calculador de tiempo de caída -->
+  <details>
+    <summary>Calculador de tiempo de caída</summary>
+    <div class="section">
+      <li>Calculador de tiempo de caída</li>
+      <form id="tiempoCaidaForm" onsubmit="calcularTiempoCaida(event)">
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura_caida" name="altura_caida" required>
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosTiempoCaida"></div>
+    </div>
+  </details>
+  
+  <!-- Calculador de velocidad máxima -->
+  <details>
+    <summary>Calculador de velocidad máxima</summary>
+    <div class="section">
+      <li>Calculador de velocidad máxima</li>
+      <form id="velocidadMaximaForm" onsubmit="calcularVelocidadMaxima(event)">
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura_maxima" name="altura_maxima" required>
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosVelocidadMaxima"></div>
+    </div>
+  </details>
+  
+  <input type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
+        <a href='caida_libre.html'>Caída Libre</a>
+        <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
+        <a href='parabolico.html'">Movimiento Parabólico</a>
+        <a href='circular.html'">Movimiento Circular</a>
+      </nav>
+      <label for="btn-menu">✖️</label>
+    </div>
+  </div>  
+
+  <div class="animacion">
+    <h1>Simulador de gravedad</h1>
+    <label for="gravity-input">Gravedad (m/s²):</label>
+    <input type="number" id="gravity-input" step="0.1" value="9.8">
+      <div class="container_a_cl">
+        <div class="ball"></div>
+      </div>
+    <button class="start-button" onclick="startAnimation()">Iniciar animación</button>
+  </div>
+  
+  <script>
+    const container = document.querySelector(".container_a_cl");
+    const ball = document.querySelector(".ball");
+    const gravityInput = document.getElementById("gravity-input");
+    let position = 0; // Posición inicial de la pelota
+    let velocity = 0; // Velocidad inicial de la pelota
+    let gravity = parseFloat(gravityInput.value); // Aceleración gravitacional (m/s^2)
+    const timeInterval = 10; // Intervalo de tiempo para la animación (ms)
+    let animationInterval;
+    
+    function animate() {
+      // Calcular la nueva posición y velocidad utilizando las ecuaciones cinemáticas
+      velocity += (gravity*10) * (timeInterval / 1000);
+      position += velocity * (timeInterval / 1000);
+      
+      // Actualizar la posición de la pelota
+      ball.style.top = `${position}px`;
+      
+      // Verificar si la pelota ha alcanzado el borde inferior del contenedor
+      const containerHeight = container.clientHeight;
+      const ballHeight = ball.clientHeight;
+      if (position + ballHeight >= containerHeight) {
+        // Si ha alcanzado el borde inferior, detener la animación
+        clearInterval(animationInterval);
+      }
+    }
+    
+    function startAnimation() {
+      // Reiniciar la posición y velocidad
+      position = 0;
+      velocity = 0;
+      
+      // Actualizar la gravedad con el valor ingresado por el usuario
+      gravity = parseFloat(gravityInput.value);
+      
+      // Detener la animación anterior si existe
+      if (animationInterval) {
+        clearInterval(animationInterval);
+      }
+      
+      // Iniciar la nueva animación
+      animationInterval = setInterval(animate, timeInterval);
+    }
+  </script>
+
+<div class="outer-container">
+  <div class="container_ejercicio">
+      <h1>Ejercicio 1</h1>
+    </div>
+  </div>
+  
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 2</h1>
+    </div>
+  </div>
+  
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 3</h1>
+    </div>
+  </div>
+  
+  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+  
+</div>
+</body>
+</html>

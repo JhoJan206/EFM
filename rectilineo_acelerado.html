@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Simulacion</title>
+  <script src="script.js"></script>
+  <script src="script/script_mrua.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <body>
+  
+  <header>
+    <div class="banda-superior">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu" class="icon-menu">☰</label>
+        </div>
+      </div>
+      <h1>movimiento rectilíneo uniformemente acelerado</h1>
+    </div>
+  </header>
+
+<div class="containerall">
+  <div class="section">
+    <h1>Introducción</h1>
+    <p>El movimiento rectilíneo uniformemente acelerado es un concepto fundamental en la física que describe el movimiento de un objeto a lo largo de una línea recta con una aceleración constante. En este tipo de movimiento, la velocidad del objeto cambia a una tasa constante a lo largo del tiempo.</p>
+  </div>
+
+    <div class="section">
+      <h1>Conceptos básicos</h1>
+      <h2>En el movimiento rectilíneo uniformemente acelerado, existen varios conceptos clave:</h2>
+      <ul>
+        <li>Posición (x): Es la posición del objeto a lo largo de la línea recta. Se mide en metros (m).</li>
+        <li>Velocidad (v): Es la magnitud y dirección del desplazamiento del objeto por unidad de tiempo. Se mide en metros por segundo (m/s).</li>
+        <li>Aceleración (a): Es la tasa de cambio de la velocidad del objeto por unidad de tiempo. Se mide en metros por segundo al cuadrado (m/s^2).</li>
+        <li>Tiempo (t): Es el intervalo de tiempo transcurrido desde el inicio del movimiento. Se mide en segundos (s).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h1>Fórmulas</h1>
+      <h2>En el movimiento rectilíneo uniformemente acelerado, se utilizan las siguientes fórmulas:</h2>
+      <ul>
+        <li>Velocidad final (v): v = v0 + a * t</li>
+        <li>Posición final (x): x = x0 + v0 * t + (1/2) * a * t^2</li>
+        <li>Posición inicial (x0): x0 = x - v0 * t - (1/2) * a * t^2</li>
+        <li>Tiempo (t): t = (v - v0) / a</li>
+      </ul>
+    </div>
+
+  <!-- Calculador de velocidad final -->
+  <details>
+    <summary>Calculador de velocidad final</summary>
+      <div class="section">
+        <h2>Simulador de Movimiento Rectilíneo Uniformemente Acelerado (MRUA)</h2>
+        <li>Calculador de velocidad final</li>
+        <form id="velocidadFinalForm" onsubmit="calcularVelocidadFinal(event)">
+            <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
+            <input type="number" id="velocidad_inicial" name="velocidad_inicial" placeholder="0" >
+
+            <label for="aceleracion">Aceleración (m/s²):</label>
+            <input type="number" id="aceleracion" name="aceleracion" required>
+
+            <label for="tiempo">Tiempo (s):</label>
+            <input type="number" id="tiempo_mrua_vf" name="tiempo_mrua_vf" required>
+
+            <input type="submit" value="Calcular">
+        </form>
+
+        <div id="resultadosVelocidadFinal"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de distancia -->
+  <details>
+    <summary>Calculador de distancia</summary>
+    <div class="section">
+        <li>Calculador de distancia</li>
+        <form id="distanciaForm" onsubmit="calcularDistancia(event)">
+            <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
+            <input type="number" id="velocidad_inicial_dist" name="velocidad_inicial_dist" placeholder="0">
+            <label for="aceleracion">Aceleración (m/s²):</label>
+            <input type="number" id="aceleracion_dist" name="aceleracion_dist" required>
+            <label for="tiempo">Tiempo (s):</label>
+            <input type="number" id="tiempo_mrua_d" name="tiempo_mrua_d" required>
+            <input type="submit" value="Calcular">
+        </form>
+        <div id="resultadosDistancia"></div>
+    </div>
+  </details>
+
+    <!-- Calculador de tiempo -->
+  <details>
+    <summary>Calculador de tiempo</summary>
+    <div class="section">
+      <li>Calculador de tiempo</li>
+      <form id="tiempoForm" onsubmit="calcularTiempo(event)">
+        <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
+        <input type="number" id="velocidad_inicial_tiempo" name="velocidad_inicial_tiempo" placeholder="0">
+        <label for="aceleracion">Aceleración (m/s²):</label>
+        <input type="number" id="aceleracion_tiempo" name="aceleracion_tiempo" required>
+        <label for="velocidad_final">Velocidad final (m/s):</label>
+        <input type="number" id="velocidad_final" name="velocidad_final" required>
+        <input type="submit" value="Calcular">
+        </form>
+      <div id="resultadosTiempo"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de aceleración -->
+  <details>
+    <summary>Calculador de aceleración</summary>
+    <div class="section">
+      <li>Calculador de aceleración</li>
+      <form id="aceleracionForm" onsubmit="calcularAceleracion(event)">
+        <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
+        <input type="number" id="velocidad_inicial_aceleracion" name="velocidad_inicial_aceleracion" placeholder="0">
+          <label for="velocidad_final">Velocidad final (m/s):</label>
+          <input type="number" id="velocidad_final_aceleracion" name="velocidad_final_aceleracion" required>
+          <label for="tiempo">Tiempo (s):</label>
+          <input type="number" id="tiempo_mrua_a" name="tiempo_mrua_a" required>
+          <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosAceleracion"></div>
+    </div>
+  </details>
+
+  <input type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
+        <a href='caida_libre.html'>Caída Libre</a>
+        <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
+        <a href='parabolico.html'">Movimiento Parabólico</a>
+        <a href='circular.html'">Movimiento Circular</a>
+      </nav>
+      <label for="btn-menu">✖️</label>
+    </div>
+  </div>
+  
+  <div class="animacion">
+    <div class="animación-mrua">
+      <label for="velocity-input">Velocidad inicial (m/s):</label>
+      <input type="number" id="velocity-input-mrua" step="0.1">
+      <label for="acceleration-input">Aceleración (m/s²):</label>
+      <input type="number" id="acceleration-input-mrua" step="0.01">
+      Velocidad cada 15 metros: <span id="speed-display">0</span> m/s
+      Tiempo transcurrido: <span id="time-display-mrua">0</span> s
+      <button id="restart-button-mrua" onclick="restartAnimationMRUA()">Reiniciar</button>
+      <div id="animation-ended-message-mrua">Animación terminada</div>
+      <div class="container_a_mrua">
+        <div class="balldmrua"></div>
+      </div>
+      <button class="start-button" onclick="startAnimationMRUA()">Iniciar animación MRUA</button>
+    </div>
+  </div>
+  
+  <script>
+  const containerMRUA = document.querySelector(".container_a_mrua");
+  const ballMRUA = document.querySelector(".balldmrua");
+  const velocityInputMRUA = document.getElementById("velocity-input-mrua");
+  const accelerationInputMRUA = document.getElementById("acceleration-input-mrua");
+  const speedDisplay = document.getElementById("speed-display");
+  let positionMRUA = 0; // Posición inicial de la pelota
+  let timePassedMRUA = 0; // Tiempo transcurrido inicial
+  const timeDisplayMRUA = document.getElementById("time-display-mrua");
+  let velocityMRUA = 0; // Velocidad inicial de la pelota
+  let accelerationMRUA = 0; // Aceleración de la pelota
+  const timeIntervalMRUA = 10; // Intervalo de tiempo para la animación (ms)
+  let animationIntervalMRUA;
+  
+  function animateMRUA() {
+    // Obtener la velocidad y la aceleración
+    velocityMRUA = parseFloat(velocityInputMRUA.value);
+    accelerationMRUA = parseFloat(accelerationInputMRUA.value);
+  
+    // Calcular la nueva posición utilizando la ecuación del MRUA
+    positionMRUA = 0.5 * accelerationMRUA * Math.pow(timePassedMRUA, 2) + velocityMRUA * timePassedMRUA;
+  
+    // Calcular la velocidad en el punto actual
+    const currentSpeed = velocityMRUA + accelerationMRUA * timePassedMRUA;
+    
+    // Actualizar la posición de la pelota
+    ballMRUA.style.left = `${positionMRUA}px`;
+  
+    // Actualizar la velocidad en pantalla cada 15 metros
+    if (Math.floor(positionMRUA) % 15 === 0) {
+      speedDisplay.textContent = `${currentSpeed.toFixed(2)} m/s`;
+    }
+  
+    // Detener la animación si la posición supera cierto límite
+    if (positionMRUA >= 500) {
+      clearInterval(animationIntervalMRUA);
+      timeDisplayMRUA.textContent = `${timePassedMRUA.toFixed(2)} s`;
+      document.getElementById("animation-ended-message-mrua").style.display = "block";
+      document.getElementById("restart-button-mrua").disabled = false;
+    }
+  
+    timePassedMRUA += timeIntervalMRUA / 1000;
+    timeDisplayMRUA.textContent = `${timePassedMRUA.toFixed(2)} s`;
+  }
+  
+  function startAnimationMRUA() {
+    // Reiniciar valores
+    positionMRUA = 0;
+    timePassedMRUA = 0;
+  
+    // Detener animación anterior si existe
+    if (animationIntervalMRUA) {
+      clearInterval(animationIntervalMRUA);
+    }
+  
+    // Iniciar la nueva animación
+    animationIntervalMRUA = setInterval(animateMRUA, timeIntervalMRUA);
+  }
+  
+  function restartAnimationMRUA() {
+    // Ocultar mensaje y habilitar botón de reinicio
+    document.getElementById("animation-ended-message-mrua").style.display = "none";
+    document.getElementById("restart-button-mrua").disabled = true;
+  
+    // Reiniciar valores
+    positionMRUA = 0;
+    timePassedMRUA = 0;
+    timeDisplayMRUA.textContent = "0.00 s";
+  
+    // Detener animación anterior si existe
+    if (animationIntervalMRUA) {
+      clearInterval(animationIntervalMRUA);
+    }
+  
+    // Iniciar la nueva animación
+    animationIntervalMRUA = setInterval(animateMRUA, timeIntervalMRUA);
+  }
+  </script>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 1</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 2</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 3</h1>
+    </div>
+  </div>
+
+  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+  
+</div>
+</body>
+</html>

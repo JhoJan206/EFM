@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulacion</title>
+  <script src="script.js"></script>
+  <script src="script/script_mp.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="banda-superior">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu" class="icon-menu">☰</label>
+        </div>
+      </div>
+      <h1>Movimiento parabólico</h1>
+    </div>
+  </header>
+
+<div class="containerall">  
+  <div class="section">
+    <h1>Introducción</h1>
+    <p>El movimiento parabólico es un concepto fundamental en la física que describe el movimiento de un objeto lanzado en un ángulo en el aire. En este tipo de movimiento, el objeto sigue una trayectoria parabólica debido a la influencia de la gravedad y la velocidad inicial.</p>
+  </div>
+
+  <div class="section">
+    <h1>Conceptos básicos</h1>
+    <h2>En el movimiento parabólico, existen varios conceptos clave:</h2>
+    <ul>
+      <li>Altura máxima (h): Es la máxima altura alcanzada por el objeto en su trayectoria parabólica. Se mide en metros (m).</li>
+      <li>Alcance horizontal (R): Es la distancia horizontal recorrida por el objeto antes de caer al suelo. Se mide en metros (m).</li>
+      <li>Ángulo de lanzamiento (θ): Es el ángulo entre la dirección inicial de lanzamiento y la horizontal. Se mide en grados (°).</li>
+      <li>Velocidad inicial (v0): Es la velocidad con la que se lanza el objeto en su dirección inicial. Se mide en metros por segundo (m/s).</li>
+      <li>Gravedad (g): Es la aceleración debido a la gravedad, que afecta el movimiento del objeto. Se mide en metros por segundo al cuadrado (m/s^2).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h1>Fórmulas</h1>
+    <h2>En el movimiento parabólico, se utilizan las siguientes fórmulas:</h2>
+    <ul>
+      <li>Altura máxima (h): h = (v0^2 * sin^2(θ)) / (2 * g)</li>
+      <li>Alcance horizontal (R): R = (v0^2 * sin(2θ)) / g</li>
+      <li>Tiempo de vuelo (t): t = (2 * v0 * sin(θ)) / g</li>
+      <li>Altura en función del tiempo (h): h = v0 * sin(θ) * t - (1/2) * g * t^2</li>
+    </ul>
+  </div>
+
+  <h1>Simulador De Movimiento Parabolico</h1>
+
+  <!-- Calculador de altura máxima -->
+  <details>
+    <summary>Calculador de altura máxima</summary>
+    <div class="section">
+      <li>Calculadora de Altura Máxima</li>
+      <form id="alturaMaximaForm" onsubmit="calcularAlturaMaxima(event)">
+        <label for="velocidadInicial">Velocidad inicial (v0 en m/s):</label>
+        <input type="number" id="velocidadInicial" name="velocidadInicial" placeholder="0">
+        <label for="anguloLanzamiento">Ángulo de lanzamiento (θ en grados):</label>
+        <input type="number" id="anguloLanzamiento" name="anguloLanzamiento" placeholder="0">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosAlturaMaxima"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de alcance horizontal -->
+  <details>
+    <summary>Calculador de alcance horizontal</summary>
+    <div class="section">
+      <li>Calculadora de Alcance Horizontal</li>
+      <form id="alcanceHorizontalForm" onsubmit="calcularAlcanceHorizontal(event)">
+        <label for="velocidadInicial_2">Velocidad inicial (v0 en m/s):</label>
+        <input type="number" id="velocidadInicial_2" name="velocidadInicial_2" placeholder="0">
+        <label for="anguloLanzamiento_2">Ángulo de lanzamiento (θ en grados):</label>
+        <input type="number" id="anguloLanzamiento_2" name="anguloLanzamiento_2" placeholder="0">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosAlcanceHorizontal"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de tiempo de vuelo -->
+  <details>
+    <summary>Calculador de tiempo de vuelo </summary>
+    <div class="section">
+      <li>Calculadora de Tiempo de Vuelo</li>
+      <form id="tiempoVueloForm" onsubmit="calcularTiempoVuelo(event)">
+        <label for="velocidadInicial_3">Velocidad inicial (v0 en m/s):</label>
+        <input type="number" id="velocidadInicial_3" name="velocidadInicial_3" placeholder="0">
+        <label for="anguloLanzamiento_3">Ángulo de lanzamiento (θ en grados):</label>
+        <input type="number" id="anguloLanzamiento_3" name="anguloLanzamiento_3" placeholder="0">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosTiempoVuelo"></div>
+    </div>
+  </details>
+
+  <!-- Calculador de altura en función del tiempo -->
+  <details>
+    <summary>Calculador de altura en función del tiempo</summary>
+    <div class="section">
+      <li>Calculadora de Altura en función del Tiempo</li>
+      <form id="alturaTiempoForm" onsubmit="calcularAlturaTiempo(event)">
+        <label for="velocidadInicial_4">Velocidad inicial (v0 en m/s):</label>
+        <input type="number" id="velocidadInicial_4" name="velocidadInicial_4" placeholder="0">
+        <label for="anguloLanzamiento_4">Ángulo de lanzamiento (θ en grados):</label>
+        <input type="number" id="anguloLanzamiento_4" name="anguloLanzamiento_4" placeholder="0">
+        <label for="tiempo">Tiempo (t en segundos):</label>
+        <input type="number" id="tiempo" name="tiempo" placeholder="0">
+        <input type="submit" value="Calcular">
+      </form>
+      <div id="resultadosAlturaTiempo"></div>
+    </div>
+  </details>
+
+  <input type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+      <nav>
+        <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
+        <a href='caida_libre.html'>Caída Libre</a>
+        <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
+        <a href='parabolico.html'>Movimiento Parabólico</a>
+        <a href='circular.html'>Movimiento Circular</a>
+      </nav>
+      <label for="btn-menu">✖️</label>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 1</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 2</h1>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 3</h1>
+    </div>
+  </div>
+
+  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+  
+</div>
+</body>
+</html>
