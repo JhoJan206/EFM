@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulación</title>
-  <script src="script.js"></script>
-  <script src="script/script_mru.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -18,7 +16,7 @@
           <label for="btn-menu" class="icon-menu">☰</label>
         </div>
       </div>
-      <h1>Movimiento rectilíneo uniforme </h1>
+      <h1>MRU</h1>
     </div>
   </header>
 
@@ -27,7 +25,7 @@
     <div class="section">
       <h1>Introducción</h1>
       <p>El movimiento rectilíneo uniforme es un concepto fundamental en la física que describe el movimiento de un cuerpo a lo largo de una línea recta con velocidad constante. En este tipo de movimiento, la velocidad del objeto no cambia en magnitud ni en dirección a lo largo del tiempo dado que su aceleración es nula.El movimiento rectilíneo uniforme se designa frecuentemente con el acrónimo MRU.</p>
-      <img class="mi-imagen" src="img/MRU.jpg">
+      <img class="mi-imagen" src="img/mru-logo.jpg">
       <p>De acuerdo con la Primera Ley de Newton, toda partícula puntual permanece en reposo o en movimiento rectilíneo uniforme cuando no hay una fuerza externa que actúe sobre el cuerpo, dado que las fuerzas actuales están en equilibrio, por lo cual su estado es de reposo o de movimiento rectilíneo uniforme. </p>
     </div>
 
@@ -120,96 +118,12 @@
       <label for="velocity-input">Velocidad (m/s):</label>
       <input type="number" id="velocity-input-mru" step="0.1">
       <div class="distance-indicator">Distancia recorrida: <span id="distance-display">0</span> m</div>
-      Tiempo transcurrido: <span id="time-display">0</span> s
-      <button id="restart-button" onclick="restartAnimation()">Reiniciar</button>
-      <div id="animation-ended-message">Animación terminada</div>
       <div class="container_a_mru">
         <div class="balldmru"></div>
       </div>
       <button class="start-button" onclick="startAnimationMRU()">Iniciar animación MRU</button>
     </div>
   </div>
-
-<script>
-  const containerMRU = document.querySelector(".container_a_cl");
-  const ballMRU = document.querySelector(".balldmru");
-  const velocityInputMRU = document.getElementById("velocity-input-mru");
-  const distanceDisplay = document.getElementById("distance-display");
-  let positionMRU = 0; // Posición inicial de la pelota
-  let timePassed = 0.05; // Tiempo transcurrido inicial
-  const timeDisplay = document.getElementById("time-display");
-  let velocityMRU = 0; // Velocidad inicial de la pelota
-  const timeIntervalMRU = 10; // Intervalo de tiempo para la animación (ms)
-  const distanceStep = 20; // Cada cuántos metros se actualiza la distancia en la pantalla
-  let animationIntervalMRU;
-
-  function animateMRU() {
-    // Calcular la nueva posición utilizando la velocidad constante
-    velocityMRU = parseFloat(velocityInputMRU.value);
-    positionMRU += velocityMRU * (timeIntervalMRU / 1000);
-
-    // Actualizar la posición de la pelota
-    ballMRU.style.left = `${positionMRU}px`;
-
-    // Actualizar la distancia recorrida en la pantalla
-    const roundedDistance = Math.floor(positionMRU);
-    distanceDisplay.textContent = `${roundedDistance} m`;
-
-    // Verificar si la pelota ha alcanzado el límite de 100 metros
-    if (roundedDistance >= 500) {
-      // Detener la animación si ha alcanzado el límite
-      clearInterval(animationIntervalMRU);
-    }
-    timePassed += timeIntervalMRU / 1000; // Convertir el intervalo a segundos
-    timeDisplay.textContent = `${timePassed.toFixed(2)} s`;
-    
-  if (roundedDistance >= 500) {
-    // Detener la animación y mostrar el mensaje cuando se alcance el límite
-    clearInterval(animationIntervalMRU);
-    timeDisplay.textContent = `${timePassed.toFixed(2)} s`;
-    document.getElementById("animation-ended-message").style.display = "block";
-    document.getElementById("restart-button").disabled = false;
-
-    
- 
-}
-  }
-
-  function startAnimationMRU() {
-    // Reiniciar la posición y velocidad
-    positionMRU = 25;
-    velocityMRU = 25;
-
-    // Detener la animación anterior si existe
-    if (animationIntervalMRU) {
-      clearInterval(animationIntervalMRU);
-    }
-
-    // Iniciar la nueva animación
-    animationIntervalMRU = setInterval(animateMRU, timeIntervalMRU);
-    
-  }
-  function restartAnimation() {
-  // Ocultar el mensaje y habilitar el botón de reinicio
-  document.getElementById("animation-ended-message").style.display = "none";
-  document.getElementById("restart-button").disabled = true;
-
-  // Reiniciar la posición, velocidad y tiempo
-  positionMRU = 25;
-  velocityMRU = 0;
-  timePassed = 0.05;
-  timeDisplay.textContent = "0.00 s";
-
-  // Detener la animación anterior si existe
-  if (animationIntervalMRU) {
-    clearInterval(animationIntervalMRU);
-  }
-
-  // Iniciar la nueva animación
-  animationIntervalMRU = setInterval(animateMRU, timeIntervalMRU);
-}
-</script>
-
 
   <div class="outer-container">
     <div class="container_ejercicio">
@@ -242,7 +156,10 @@
   </div>
 
   <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
-  
-</div>
+
+  <script src="script.js"></script>
+  <script src="script/script_mru.js"></script>
+
+  </div>
 </body>
 </html>

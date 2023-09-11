@@ -78,4 +78,55 @@
     `;
   }
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const containerMRU = document.querySelector(".container_a_cl");
+const ballMRU = document.querySelector(".balldmru");
+const velocityInputMRU = document.getElementById("velocity-input-mru");
+const distanceDisplay = document.getElementById("distance-display");
+let positionMRU = 0; // Posición inicial de la pelota
+let timePassed = 0; // Tiempo transcurrido inicial
+const timeDisplay = document.getElementById("time-display");
+let velocityMRU = 0; // Velocidad inicial de la pelota
+const timeIntervalMRU = 10; // Intervalo de tiempo para la animación (ms)
+const distanceStep = 20; // Cada cuántos metros se actualiza la distancia en la pantalla
+let animationIntervalMRU;
+
+function animateMRU() {
+  // Calcular la nueva posición utilizando la velocidad constante
+  velocityMRU = parseFloat(velocityInputMRU.value);
+  positionMRU += velocityMRU * (timeIntervalMRU / 1000);
+
+  // Actualizar la posición de la pelota
+  ballMRU.style.left = `${positionMRU}px`;
+
+  // Actualizar la distancia recorrida en la pantalla
+  const roundedDistance = Math.floor(positionMRU);
+  distanceDisplay.textContent = `${roundedDistance} `;
+
+  // Verificar si la pelota ha alcanzado el límite de 100 metros
+  if (roundedDistance >= 500) {
+    // Detener la animación si ha alcanzado el límite
+    clearInterval(animationIntervalMRU);
+  }
+  timePassed += timeIntervalMRU / 950; // Convertir el intervalo a segundos
+
+  if (roundedDistance >= 500) {
+    // Detener la animación
+    clearInterval(animationIntervalMRU);
+  }
+}
+
+function startAnimationMRU() {
+  // Reiniciar la posición y velocidad
+  positionMRU = 25;
+  velocityMRU = 25;
+
+  // Detener la animación anterior si existe
+  if (animationIntervalMRU) {
+    clearInterval(animationIntervalMRU);
+  }
+
+  // Iniciar la nueva animación
+  animationIntervalMRU = setInterval(animateMRU, timeIntervalMRU);
+}

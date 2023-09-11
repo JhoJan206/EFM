@@ -1,18 +1,21 @@
 :root{
     --primary: #fac400;
     --primary2: #dda900;
-    --secondary: #0c1431;
-    --secondary2: #010653;
+    --secondary: #010218;
+    --secondary2: #000435;
+    --text: #ffffffd7;
 }
 /* fondo */
 body {
-    /*background: linear-gradient(to bottom, var(--secondary2) ,var(--secondary) ); */
-    background-image: url(img/el_real.jpg);
-    background-size: cover; /*ajusta el tamaño de la imagen al contenedor*/
-    background-repeat: no-repeat; /*evita que la imagen se repita*/
+    background: linear-gradient(to right, var(--secondary) ,var(--secondary2) ); 
+    /*background-image: url(img/el_real.jpg);*/
+    /*background: #000627;
+    background: -moz-linear-gradient(centro, #000627 0%, #00030E 50%, #000627 100%);
+    background: -webkit-linear-gradient(centro, #000627 0%, #00030E 50%, #000627 100%);
+    background: linear-gradient(to right, #000627 0%, #00030E 50%, #000627 100%);*/
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 .containerall{
     padding: 20px;
@@ -21,19 +24,20 @@ h1{
     color: var(--primary2);
 }
 h2{
-    color: #000000;
+    color: var(--text);
 }
 h3{
-    color: #000000;
+    color: var(--text);
 }
 h4{
-    color: #000000;
+    color: var(--text);
 }
 p{
-    color: #000000;
+    color: var(--text);
+    font-size: 18px;
 }
 li{
-    color: #000000;
+    color: var(--text);
 }
 .mi-imagen {
     width: auto; /* ajusta el ancho de la imagen */
@@ -45,16 +49,17 @@ li{
 }
 .boton_volver {/* botones de volver */
     background-color: #3498db;
-    border: none;
-    color: white; /*color del texto*/
+    border: solid 1px #000000;
+    color: white;
     padding: 12px 24px;
     text-align: center;
     text-decoration: none;
-    display: inline-block; /* Hace que el botón sea un elemento en línea */
-    font-size: 18px; /*tamaño del texto*/
-    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 12px;
     cursor: pointer;
-    margin: 30px;
+    margin: 30px auto;
     user-select: none;
 }
 .boton_volver:hover {
@@ -63,14 +68,14 @@ li{
 .banda-superior {
     background-color: rgba(51, 51, 51, 0.6); /* Cambia el último valor (0.8) para ajustar la transparencia */
     color: #ffffff;
-    padding: 12px;
-    text-align: left;
+    padding: 10px;
+    text-align: center;
     display: flex;
     align-items: center;
-    height: 60px; /* Ajusta la altura deseada de la banda */
+    height: auto;
+    max-height: 70px;
     box-sizing: border-box; /* Incluye el relleno en el cálculo de la altura */
-    text-align: center;
-    gap: 15px;
+    gap: 10px;
 }
 /* menu lateral */
 .container .btn-menu,.logo {
@@ -176,19 +181,22 @@ details{ /*menus de la calculadora de los movimientos*/
     cursor: pointer;
     user-select: none;
 }
-
-/*ejecicios*/
+/*ejercicios*/
 .outer-container {
     display: flex;
-    margin: 20px;
+    justify-content: center; /* Centra horizontalmente los elementos dentro del .outer-container */
+    margin: 0;
 }
+
 .container_ejercicio {
     width: 100%;
-    padding: 20px;
+    max-width: 1000px;
+    padding: 10px;
     border: 3px solid #000000;
-    border-radius: 15px;
+    border-radius: 12px;
     background-color: #757575;
 }
+
 /*animaciones*/
 .animacion{
     margin-top: 50px;
@@ -199,7 +207,7 @@ details{ /*menus de la calculadora de los movimientos*/
 }
 /*animaciones mru y mrua*/
   .container_a_mru {
-    width: 600px;
+    width: 525px;
     height: 200px;
     border: 1px solid #ccc;
     position: relative;

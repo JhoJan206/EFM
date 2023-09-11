@@ -18,7 +18,7 @@
           <label for="btn-menu" class="icon-menu">☰</label>
         </div>
       </div>
-      <h1>Movimiento rectilíneo uniformemente acelerado</h1>
+      <h1>MRUA</h1>
     </div>
   </header>
 
@@ -148,9 +148,6 @@
       <label for="acceleration-input">Aceleración (m/s²):</label>
       <input type="number" id="acceleration-input-mrua" step="0.01">
       Velocidad cada 15 metros: <span id="speed-display">0</span> m/s
-      Tiempo transcurrido: <span id="time-display-mrua">0</span> s
-      <button id="restart-button-mrua" onclick="restartAnimationMRUA()">Reiniciar</button>
-      <div id="animation-ended-message-mrua">Animación terminada</div>
       <div class="container_a_mrua">
         <div class="balldmrua"></div>
       </div>
@@ -166,7 +163,6 @@
   const speedDisplay = document.getElementById("speed-display");
   let positionMRUA = 0; // Posición inicial de la pelota
   let timePassedMRUA = 0; // Tiempo transcurrido inicial
-  const timeDisplayMRUA = document.getElementById("time-display-mrua");
   let velocityMRUA = 0; // Velocidad inicial de la pelota
   let accelerationMRUA = 0; // Aceleración de la pelota
   const timeIntervalMRUA = 10; // Intervalo de tiempo para la animación (ms)
@@ -194,39 +190,16 @@
     // Detener la animación si la posición supera cierto límite
     if (positionMRUA >= 500) {
       clearInterval(animationIntervalMRUA);
-      timeDisplayMRUA.textContent = `${timePassedMRUA.toFixed(2)} s`;
-      document.getElementById("animation-ended-message-mrua").style.display = "block";
-      document.getElementById("restart-button-mrua").disabled = false;
     }
   
     timePassedMRUA += timeIntervalMRUA / 1000;
-    timeDisplayMRUA.textContent = `${timePassedMRUA.toFixed(2)} s`;
   }
   
   function startAnimationMRUA() {
     // Reiniciar valores
     positionMRUA = 0;
     timePassedMRUA = 0;
-  
-    // Detener animación anterior si existe
-    if (animationIntervalMRUA) {
-      clearInterval(animationIntervalMRUA);
-    }
-  
-    // Iniciar la nueva animación
-    animationIntervalMRUA = setInterval(animateMRUA, timeIntervalMRUA);
-  }
-  
-  function restartAnimationMRUA() {
-    // Ocultar mensaje y habilitar botón de reinicio
-    document.getElementById("animation-ended-message-mrua").style.display = "none";
-    document.getElementById("restart-button-mrua").disabled = true;
-  
-    // Reiniciar valores
-    positionMRUA = 0;
-    timePassedMRUA = 0;
-    timeDisplayMRUA.textContent = "0.00 s";
-  
+
     // Detener animación anterior si existe
     if (animationIntervalMRUA) {
       clearInterval(animationIntervalMRUA);

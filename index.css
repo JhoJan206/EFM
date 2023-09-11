@@ -22,8 +22,8 @@
 .card{
     width: 240px;
     max-width: 240px;
-    height: 400px;
-    max-height: 400px;
+    height: 430px;
+    max-height: 430px;
     border: var(--primary) solid 1.5px;
     border-radius: 16px;
     overflow: hidden;
