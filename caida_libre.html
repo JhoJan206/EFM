@@ -4,13 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulacion</title>
-  <script src="script.js"></script>
-  <script src="script/script_cl.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
   <body>
 
-  
   <header>
     <div class="banda-superior">
       <div class="container">
@@ -109,7 +106,7 @@
   <p>Un pequeño ejemplo sobre la caida libre, ¡Animate a interactuar con esta!</p>
   <div class="animacion">
     
-    <label for="gravity-input">Gravedad (m/s²):</label>
+    <label for="gravity-input"><p>Gravedad (m/s²)</p>:</label>
     <input type="number" id="gravity-input" step="0.1" value="9.8">
       <div class="container_a_cl">
         <div class="ball"></div>
@@ -162,46 +159,40 @@
     }
   </script>
 
-<div class="outer-container">
-  <div class="container_ejercicio">
-    <h1>Ejercicio 1</h1>
-    <p>Un objeto se deja caer desde una altura de 50 metros. Calcula el tiempo que tarda en llegar al suelo.</p>
-    <button onclick="mostrarSolucion(1)">Mostrar Solución</button>
-    <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Altura inicial (h) = 50 metros.<br>Aceleración debido a la gravedad (g) = 9.8 m/s².<br>Fórmula para el tiempo de caída (t):<br>t = sqrt((2 * h) / g)<br>Sustitución de valores:<br>t = sqrt((2 * 50) / 9.8)<br>t ≈ 3.19 segundos</p>
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 1</h1>
+      <p>Un objeto se deja caer desde una altura de 50 metros. Calcula el tiempo que tarda en llegar al suelo.</p>
+      <button onclick="mostrarSolucion(1)">Mostrar Solución</button>
+      <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Altura inicial (h) = 50 metros.<br>Aceleración debido a la gravedad (g) = 9.8 m/s².<br>Fórmula para el tiempo de caída (t):<br>t = sqrt((2 * h) / g)<br>Sustitución de valores:<br>t = sqrt((2 * 50) / 9.8)<br>t ≈ 3.19 segundos</p>
+    </div>
   </div>
-</div>
 
-<div class="outer-container">
-  <div class="container_ejercicio">
-    <h1>Ejercicio 2</h1>
-    <p>Un objeto se lanza verticalmente hacia arriba con una velocidad inicial de 20 m/s. Calcula la altura máxima que alcanza.</p>
-    <button onclick="mostrarSolucion(2)">Mostrar Solución</button>
-    <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial (v0) = 20 m/s.<br>Aceleración debido a la gravedad (g) = 9.8 m/s².<br>Fórmula para la altura máxima (h):<br>h = (v0^2) / (2 * g)<br>Sustitución de valores:<br>h = (20^2) / (2 * 9.8)<br>h ≈ 20.41 metros</p>
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 2</h1>
+      <p>Un objeto se lanza verticalmente hacia arriba con una velocidad inicial de 20 m/s. Calcula la altura máxima que alcanza.</p>
+      <button onclick="mostrarSolucion(2)">Mostrar Solución</button>
+      <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial (v0) = 20 m/s.<br>Aceleración debido a la gravedad (g) = 9.8 m/s².<br>Fórmula para la altura máxima (h):<br>h = (v0^2) / (2 * g)<br>Sustitución de valores:<br>h = (20^2) / (2 * 9.8)<br>h ≈ 20.41 metros</p>
+    </div>
   </div>
-</div>
 
-<div class="outer-container">
-  <div class="container_ejercicio">
-    <h1>Ejercicio 3</h1>
-    <p>Un objeto cae libremente desde un edificio de 80 metros de altura. Calcula la velocidad que tiene al tocar el suelo.</p>
-    <button onclick="mostrarSolucion(3)">Mostrar Solución</button>
-    <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Altura inicial (h) = 80 metros.<br>Aceleración debido a la gravedad (g) = 9.8 m/s².<br>Fórmula para la velocidad al tocar el suelo (vf):<br>vf = sqrt(2 * g * h)<br>Sustitución de valores:<br>vf = sqrt(2 * 9.8 * 80)<br>vf ≈ 40 m/s</p>
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 3</h1>
+      <p>Un objeto cae libremente desde un edificio de 80 metros de altura. Calcula la velocidad que tiene al tocar el suelo.</p>
+      <button onclick="mostrarSolucion(3)">Mostrar Solución</button>
+      <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Altura inicial (h) = 80 metros.<br>Aceleración debido a la gravedad (g) = 9.8 m/s².<br>Fórmula para la velocidad al tocar el suelo (vf):<br>vf = sqrt(2 * g * h)<br>Sustitución de valores:<br>vf = sqrt(2 * 9.8 * 80)<br>vf ≈ 40 m/s</p>
+    </div>
   </div>
-</div>
 
-<script>
-  function mostrarSolucion(numeroEjercicio) {
-    var solucion = document.getElementById(`solucion${numeroEjercicio}`);
-    if (solucion.style.display === "none") {
-      solucion.style.display = "block";
-    } else {
-      solucion.style.display = "none";
-    }
-  }
-</script>
-</div>
+
   <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
   
-</div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="script/script_cl.js"></script>
+
 </body>
 </html>

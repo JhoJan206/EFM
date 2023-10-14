@@ -167,17 +167,6 @@
     </div>
   </div>
   
-  <script>
-    function mostrarSolucion(numeroEjercicio) {
-      var solucion = document.getElementById(`solucion${numeroEjercicio}`);
-      if (solucion.style.display === "none") {
-        solucion.style.display = "block";
-      } else {
-        solucion.style.display = "none";
-      }
-    }
-  </script>
-  
   <h1>Simulador de Movimiento Circular Uniforme (MCU)</h1>
   <p>Este es un pequeño ejemplo de cómo funciona el movimiento circular.</p>
 
@@ -188,10 +177,11 @@
     <!-- Contenido del contenedor-circulo si es necesario -->
   </div>
 
+  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
 </div>
-
-
-<button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+  
+  <script src="script.js"></script>
+  <script src="script/script_mc.js"></script>
 
 </div>
 </body>

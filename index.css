@@ -5,6 +5,7 @@
     --secondary: #0c1431;
     --accent: #ceae3b;
     --primary2: #d4a704;
+    --text: #ffffffd7;
 }
 *{
     margin: 0;
@@ -63,7 +64,7 @@
     text-align: left;
 }
 .card main p{
-    color: #000000;
+    color: var(--text);
     word-wrap: break-word;
     overflow-y: hidden;
 }

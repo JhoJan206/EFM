@@ -1,9 +1,9 @@
 :root{
-    --primary: #18531f;
-    --primary2: #287531;
-    --secondary: #e6f3b5;
-    --secondary2: #eff0ac;
-    --text: #000000d7;
+    --primary: #fffb13;
+    --primary2: #fffb13;
+    --secondary: #020227;
+    --secondary2: #01031a;
+    --text: #ffffffd7;
 }
 /* fondo */
 body {
@@ -33,7 +33,7 @@ h4{
     color: var(--text);
 }
 p{
-    color: var(--text);
+    color: #E5E5E5;
     font-size: 18px;
 }
 li{
@@ -197,13 +197,14 @@ details{ /*menus de la calculadora de los movimientos*/
     background-color: #757575;
 }
 
-/*animaciones*/
+/*animaciones cl*/
 .animacion{
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 /*animaciones mru y mrua*/
   .container_a_mru {
@@ -262,6 +263,7 @@ details{ /*menus de la calculadora de los movimientos*/
     margin-top: 20px;
     cursor: pointer;
 }
+/*Animacion movimiento circular*/
 .contenedor-circulo{
     width:250px;
     height: 250px;
