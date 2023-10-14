@@ -125,35 +125,123 @@
     </div>
   </div>
 
-  <div class="outer-container">
-    <div class="container_ejercicio">
-      <h1>Ejercicio 1</h1>
-      <h3>Problema de MRU</h3>
-      <p>Un ciclista se desplaza a una velocidad constante de 15 m/s. Si ha estado en movimiento durante 30 segundos, ¿cuál es la distancia recorrida?</p>
-      <h3>Fórmula MRU:</h3>
-      <p>La distancia recorrida en un MRU se calcula utilizando la fórmula:<strong> Distancia = Velocidad × Tiempo</strong></p>
-      <h4>datos:</h4>
-      <p>v = 15 m/s<br> Tiempo (t) = 30 s</p>
-      <h4>Proceso:</h4>
-      <p>D = V x t</p>
-      <p>D = 15 m/s × 30 s </p>
-      <p>D = 450 metros</p>
-      <h3>Respuesta:</h3>
-      <p>La distancia recorrida por el ciclista es de <strong>450 metros</strong>.</p>
-    </div>
-  </div>
+<script>
+  const containerMRU = document.querySelector(".container_a_cl");
+  const ballMRU = document.querySelector(".balldmru");
+  const velocityInputMRU = document.getElementById("velocity-input-mru");
+  const distanceDisplay = document.getElementById("distance-display");
+  let positionMRU = 0; // Posición inicial de la pelota
+  let timePassed = 0.05; // Tiempo transcurrido inicial
+  const timeDisplay = document.getElementById("time-display");
+  let velocityMRU = 0; // Velocidad inicial de la pelota
+  const timeIntervalMRU = 10; // Intervalo de tiempo para la animación (ms)
+  const distanceStep = 20; // Cada cuántos metros se actualiza la distancia en la pantalla
+  let animationIntervalMRU;
 
-  <div class="outer-container">
-    <div class="container_ejercicio">
-      <h1>Ejercicio 2</h1>
-    </div>
-  </div>
+  function animateMRU() {
+    // Calcular la nueva posición utilizando la velocidad constante
+    velocityMRU = parseFloat(velocityInputMRU.value);
+    positionMRU += velocityMRU * (timeIntervalMRU / 1000);
 
-  <div class="outer-container">
-    <div class="container_ejercicio">
-      <h1>Ejercicio 3</h1>
-    </div>
+    // Actualizar la posición de la pelota
+    ballMRU.style.left = `${positionMRU}px`;
+
+    // Actualizar la distancia recorrida en la pantalla
+    const roundedDistance = Math.floor(positionMRU);
+    distanceDisplay.textContent = `${roundedDistance} m`;
+
+    // Verificar si la pelota ha alcanzado el límite de 100 metros
+    if (roundedDistance >= 500) {
+      // Detener la animación si ha alcanzado el límite
+      clearInterval(animationIntervalMRU);
+    }
+    timePassed += timeIntervalMRU / 1000; // Convertir el intervalo a segundos
+    timeDisplay.textContent = `${timePassed.toFixed(2)} s`;
+    
+  if (roundedDistance >= 500) {
+    // Detener la animación y mostrar el mensaje cuando se alcance el límite
+    clearInterval(animationIntervalMRU);
+    timeDisplay.textContent = `${timePassed.toFixed(2)} s`;
+    document.getElementById("animation-ended-message").style.display = "block";
+    document.getElementById("restart-button").disabled = false;
+
+    
+ 
+}
+  }
+
+  function startAnimationMRU() {
+    // Reiniciar la posición y velocidad
+    positionMRU = 25;
+    velocityMRU = 25;
+
+    // Detener la animación anterior si existe
+    if (animationIntervalMRU) {
+      clearInterval(animationIntervalMRU);
+    }
+
+    // Iniciar la nueva animación
+    animationIntervalMRU = setInterval(animateMRU, timeIntervalMRU);
+    
+  }
+  function restartAnimation() {
+  // Ocultar el mensaje y habilitar el botón de reinicio
+  document.getElementById("animation-ended-message").style.display = "none";
+  document.getElementById("restart-button").disabled = true;
+
+  // Reiniciar la posición, velocidad y tiempo
+  positionMRU = 25;
+  velocityMRU = 0;
+  timePassed = 0.05;
+  timeDisplay.textContent = "0.00 s";
+
+  // Detener la animación anterior si existe
+  if (animationIntervalMRU) {
+    clearInterval(animationIntervalMRU);
+  }
+
+  // Iniciar la nueva animación
+  animationIntervalMRU = setInterval(animateMRU, timeIntervalMRU);
+}
+</script>
+
+<div class="outer-container">
+  <div class="container_ejercicio">
+    <h1>Ejercicio 1</h1>
+    <p>Un automóvil viaja a una velocidad constante de 80 km/h. Calcula la distancia que recorre en 2.5 horas.</p>
+    <button onclick="mostrarSolucion(1)">Mostrar Solución</button>
+    <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad (v) = 80 km/h = 22.22 m/s.<br>Tiempo (t) = 2.5 horas = 9000 segundos.<br>Fórmula para la distancia (d) en MRU:<br>d = v * t<br>Sustitución de valores:<br>d = 22.22 m/s * 9000 s = 200,000 metros = 200 km</p>
   </div>
+</div>
+
+<div class="outer-container">
+  <div class="container_ejercicio">
+    <h1>Ejercicio 2</h1>
+    <p>Un ciclista recorre una distancia de 45 kilómetros en 3 horas. Calcula su velocidad promedio en m/s.</p>
+    <button onclick="mostrarSolucion(2)">Mostrar Solución</button>
+    <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Distancia (d) = 45 km = 45,000 metros.<br>Tiempo (t) = 3 horas = 10,800 segundos.<br>Fórmula para la velocidad promedio (v) en MRU:<br>v = d / t<br>Sustitución de valores:<br>v = 45,000 m / 10,800 s ≈ 4.17 m/s</p>
+  </div>
+</div>
+
+<div class="outer-container">
+  <div class="container_ejercicio">
+    <h1>Ejercicio 3</h1>
+    <p>Un avión vuela a una velocidad constante de 800 km/h. Si desea recorrer una distancia de 2000 kilómetros, ¿cuánto tiempo le tomará?</p>
+    <button onclick="mostrarSolucion(3)">Mostrar Solución</button>
+    <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad (v) = 800 km/h = 222.22 m/s.<br>Distancia (d) = 2000 km = 2,000,000 metros.<br>Fórmula para el tiempo (t) en MRU:<br>t = d / v<br>Sustitución de valores:<br>t = 2,000,000 m / 222.22 m/s ≈ 9000 segundos = 2.5 horas</p>
+  </div>
+</div>
+
+<script>
+  function mostrarSolucion(numeroEjercicio) {
+    var solucion = document.getElementById(`solucion${numeroEjercicio}`);
+    if (solucion.style.display === "none") {
+      solucion.style.display = "block";
+    } else {
+      solucion.style.display = "none";
+    }
+  }
+</script>
 
   <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
 
