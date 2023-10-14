@@ -17,7 +17,7 @@
           <label for="btn-menu" class="icon-menu">☰</label>
         </div>
       </div>
-      <h1>Movimiento parabólico</h1>
+      <h1>Movimiento Parabólico</h1>
     </div>
   </header>
 
@@ -135,22 +135,357 @@
   <div class="outer-container">
     <div class="container_ejercicio">
       <h1>Ejercicio 1</h1>
+      <p>Un objeto se lanza con una velocidad inicial de 10 m/s a un ángulo de 30 grados con respecto a la horizontal. Encuentra la altura máxima que alcanza el objeto.</p>
+      <button onclick="mostrarSolucion(1)">Mostrar Solución</button>
+      <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial, v0 = 10 m/s.<br>Ángulo de lanzamiento, θ = 30 grados.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para la altura máxima (h):<br>h = (v0^2 * sin^2(θ)) / (2 * g)<br>Sustitución de valores:<br>h = (10^2 * sin^2(30°)) / (2 * 9.8)<br>h ≈ 2.55 metros</p>
     </div>
   </div>
-
+  
   <div class="outer-container">
     <div class="container_ejercicio">
       <h1>Ejercicio 2</h1>
+      <p>Un proyectil es lanzado horizontalmente desde una altura de 40 metros. Encuentra el tiempo que tarda en llegar al suelo.</p>
+      <button onclick="mostrarSolucion(2)">Mostrar Solución</button>
+      <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Altura inicial, h = 40 metros.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para el tiempo de vuelo (t):<br>t = sqrt((2 * h) / g)<br>Sustitución de valores:<br>t = sqrt((2 * 40) / 9.8)<br>t ≈ 2.03 segundos</p>
     </div>
   </div>
-
+  
   <div class="outer-container">
     <div class="container_ejercicio">
       <h1>Ejercicio 3</h1>
+      <p>Un proyectil se lanza con una velocidad inicial de 15 m/s a un ángulo de 45 grados con respecto a la horizontal. Encuentra el alcance horizontal.</p>
+      <button onclick="mostrarSolucion(3)">Mostrar Solución</button>
+      <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial, v0 = 15 m/s.<br>Ángulo de lanzamiento, θ = 45 grados.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para el alcance horizontal (R):<br>R = (v0^2 * sin(2θ)) / g<br>Sustitución de valores:<br>R = (15^2 * sin(2 * 45°)) / 9.8<br>R ≈ 15.31 metros</p>
     </div>
   </div>
+  
+  <script>
+    function mostrarSolucion(numeroEjercicio) {
+      var solucion = document.getElementById(`solucion${numeroEjercicio}`);
+      if (solucion.style.display === "none") {
+        solucion.style.display = "block";
+      } else {
+        solucion.style.display = "none";
+      }
+    }
+  </script>
+  </div>
+  </div>
+  <div class="section">
+    <h1>----------------------------Animación de Movimiento Parabólico-------------------------</h1>
+    <p>Este es un pequeño ejemplo de lo que es el movimiento parabólico.</p>
+  </div>
+  
 
-  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+</div>
+<script>
+  //"use strict";
+  var lapiz, logs, proyectil, explosion, cagnon, g=9.8, offY=0, offX=0;
+  var iniAnim=0, oAnim, oAnimNubes, nubes1, ta, objetivo, suelo;
+  function oProyectil(vel0, tamP, cag)
+  {
+      this.cx0 = cag.cx + cag.w*Math.cos(cag.ang*Math.PI/180)
+      this.cy0 = cag.cy - cag.w*Math.sin(cag.ang*Math.PI/180)
+      this.cx = 0;
+      this.cy = 0;
+      this.vini = vel0
+      this.v0 = vel0 + nubes1.v0*10;
+      this.ang = cag.ang;
+      this.tam = tamP;
+      this.max= vel0*vel0*Math.sin(this.ang*Math.PI/90)/g;
+      this.tv = 0;
+      this.fin = 0;
+      this.fondo= null;
+      
+      
+      this.desplazar = function(t,obj, sue){
+        with (this){
+        v0 = vini + nubes1.v0;
+         if(fondo != null)	
+          lapiz.putImageData(fondo, cx - tam-2, cy - tam-2);
+        cx = this.cx0 +  v0*Math.cos(ang*Math.PI/180)*tv 
+        cy = this.cy0 - 5 - (v0*Math.sin(ang*Math.PI/180) - g*tv/2)*tv;
+        
+        this.impacto(obj, sue);
+        if (fin==0)
+          situar()
+        tv += 0.2;
+        }
+        }
+       this.situar = function()
+         {
+        with (this){
+          lapiz.beginPath();
+          
+          lapiz.fillStyle = "black";
+          tam += 2 
+          fondo = lapiz.getImageData(cx-tam, cy-tam, 2*tam, 2*tam)	
+          tam -= 2
+  
+          lapiz.arc(cx, cy,tam,0, 2*Math.PI);
+          lapiz.fill();
+          lapiz.stroke();
+          
+          
+          }
+        }
+       this.impacto = function(obj, sue)
+        {	
+            
+        //lapiz.stroke(objetivo);
+        if (lapiz.isPointInPath(sue, this.cx, this.cy+this.tam) && this.tv>0)
+          this.fin = 1
+        else if (lapiz.isPointInPath(obj, this.cx, this.cy+this.tam) && this.tv >0) 
+              this.fin = 2 
+        
+              
+        }
+      
+  }
+  
+  function oNubes(img, cx, cy, anc, alt, vel, max)
+  {
+    this.cx = cx;
+    this.cx0 = cx;
+    this.max = max
+    this.cy = cy;
+    this.v0 = vel
+    this.w = anc;
+    this.h = alt;
+    this.tv = 0;
+    this.img = document.getElementById(img)
+    
+    this.fondo= lapiz.getImageData(this.cx, this.cy, this.w+2, this.h+2);
+  
+    this.desplazar = function(){	  
+      lapiz.putImageData(this.fondo, this.cx, this.cy);
+      this.cx = this.cx0 + this.v0*this.tv 
+      if (this.cx > this.max)
+        {
+        this.cx = -this.w;
+        this.cx0 = -this.w;
+        this.tv=0;
+        this.fondo= lapiz.getImageData(this.cx, this.cy, this.w, this.h);
+        this.v0 = Math.random()*20 - 10
+        }
+      if (this.cx < -this.w)
+        {
+        this.cx = this.max;
+        this.cx0 = this.max; 
+        this.tv=0;
+        this.fondo= lapiz.getImageData(this.cx, this.cy, this.w+4, this.h+2);
+        this.v0 = Math.random()*20 - 10
+        }	
+      lapiz.drawImage(this.img, this.cx, this.cy, this.w, this.h);	
+      this.tv += 0.2
+    }
+    this.cambiarVel = function()	
+    {
+      var inc = Math.random()
+  
+      if (inc > 0.5)
+        this.v0 += inc
+      else
+        this.v0 -= inc
+      this.cx0 = this.cx		
+      this.tv = 0
+    }
+      
+  }
+  
+  function oExplosion(img,et, w, h){
+     this.etapa = 0;
+     this.inc = Math.PI*et/100
+     this.img = document.getElementById(img);;
+     this.fondo = null;
+     this.cx = 0;
+     this.cy = 0;
+     this.img.width = w;
+     this.img.height = h;
+     this.poner = function(x,y)
+      {
+      this.cx = x;
+      this.cy = y;
+      this.fondo = lapiz.getImageData(this.cx-this.img.width/2, this.cy-this.img.height/2, this.img.width+2, this.img.height+2);	  
+      }
+     this.explotar = function(t)
+      {
+      this.etapa += this.inc;	
+      var width  = this.img.width*Math.sin(this.etapa); 
+      var height = this.img.height*Math.sin(this.etapa);
+      lapiz.putImageData(this.fondo, this.cx-this.img.width/2,  this.cy - this.img.height/2);	
+      lapiz.drawImage(this.img, this.cx-width/2, this.cy-height/2,width,height);
+      }
+    }
+  function oCagnon(cx, cy, img)
+  {
+    this.cx = cx+5;
+    this.cy = cy;
+    this.img = document.getElementById(img)
+    this.w = 50
+    this.h = 41
+    
+    this.fondo= null
+    this.colocar = function(ang)
+    {	
+    //0.4 (w) y 0.8 (h) para determinar centro de giro depende de la imagen usada
+      this.ang = ang;
+      lapiz.beginPath()
+      ang -= 20;
+      if (this.fondo==null)
+        {
+        this.fondo = lapiz.getImageData(this.cx, this.cy-this.h, this.w+10, this.h+10)
+        }
+        
+      lapiz.putImageData(this.fondo, this.cx, this.cy-this.h)	
+    
+      lapiz.save()
+      lapiz.translate(this.cx+this.w*0.4, this.cy)
+      lapiz.rotate(-ang*Math.PI/180)	
+      lapiz.drawImage(this.img, -this.w*0.4, -this.h*0.8, this.w, this.h)
+      lapiz.restore()
+    }
+  }
+  
+  function oObjetivo(img, posX, posY, w, h)
+  {
+    this.obj = new Path2D();
+    this.img = document.getElementById(img);
+    this.width  = w
+    this.height = h
+    this.cx = posX
+    this.cy = posY
+    this.fondo = lapiz.getImageData(this.cx, this.cy-this.height, this.width, this.height)
+    
+    this.cambiaImg = function(img, w,h)
+      {
+      this.img = document.getElementById(img);
+      this.width  = w
+      this.height = h
+      this.poner()
+      }
+    this.poner = function()
+    {
+      lapiz.putImageData(this.fondo, this.cx, this.cy-this.height)	
+      lapiz.drawImage(this.img, this.cx, this.cy-this.height, this.width, this.height)
+      this.obj.rect(this.cx,  this.cy-this.height*0.4, this.width, this.height*0.4); //area sensible
+    }
+    
+  }
+  
+  function iniciar()
+    {
+    if (iniAnim != 0)
+      return
+    var marco=document.getElementById("marco")
+    lapiz = marco.getContext("2d");
+    
+    logs = document.getElementById("log")
+    lapiz.clearRect(0,0, marco.width, marco.height)
+  
+    //Offsets en X e Y (origen esquina superior izquierda)
+    offX = 0;
+    offY = 470;
+    
+    cagnon = new oCagnon(offX,offY,"cagnon");
+    prepCagnon()
+    
+    explosion = new oExplosion("exp", 2, 80,80)	
+  
+    var objx = marco.width/2*(1 + Math.random()/2) - 100
+    objetivo = new oObjetivo("ciudad", objx, offY, 100, 46)
+    objetivo.poner()
+    
+    suelo = new Path2D();
+    suelo.rect(0,offY, marco.width, marco.height/2); //suelo
+    
+    nubes1 = new oNubes("nubes1", 300, 100, 126, 80, Math.random()*20 - 10, marco.width)
+    desplazarNubes(0);
+    
+    }
+  function desplazarNubes(t)
+  {
+    nubes1.desplazar();
+    
+    oAnimNubes = window.requestAnimationFrame(desplazarNubes);
+  }
+  function disparar()
+      {
+    if (iniAnim == 0)
+      {
+      vel = parseFloat(document.getElementById("vel").value);
+      nubes1.cambiarVel();
+      proyectil = new oProyectil(vel,8, cagnon );	
+      
+      iniAnim = window.performance.now();
+      oAnim = window.requestAnimationFrame(desplazar)
+      }
+    }
+  
+  function prepCagnon()
+  {
+    ang = parseFloat(document.getElementById("angulo").value);
+    cagnon.colocar(ang)	
+  }
+  
+  function desplazar(time)
+    {
+     var t =  Math.round((time - iniAnim)/40); 
+     ta += 0.2; 
+     proyectil.desplazar(t, objetivo.obj, suelo)
+     
+     if (proyectil.fin == 0)
+      oAnim = window.requestAnimationFrame(desplazar);
+     else
+       {
+      window.cancelAnimationFrame(oAnim);
+      explosion.poner(proyectil.cx, proyectil.cy);
+      oAnim = window.requestAnimationFrame(explotar);
+      }
+    }
+    
+  function explotar(t)
+    {
+    explosion.explotar(t);
+    if (explosion.etapa <= Math.PI)
+      oAnim = window.requestAnimationFrame(explotar);
+    else
+      {
+      iniAnim = 0;
+      explosion.etapa=0
+      if (proyectil.fin == 2)
+        {
+        objetivo.cambiaImg("ciudad2", 100, 46);
+        }
+      window.cancelAnimationFrame(oAnim);
+      }
+    }
+  </script>	
+  </head>
+  <body onload="iniciar()">
+  <div style="margin:0 auto; width:1000px">
+  <canvas id="marco" width="1000" height="600" style="background-image: url(fondo2.png); background-size: cover;"></canvas>
+  <div style="text-align:center">
+   <form action="" id="ang"><p>
+   <label for="angulo" style="margin-right: 16px; vertical-align: top">Angulo de disparo </label>
+   <input type="range" id ="angulo" form="ang" max="90" min="0" step="1" value="30" onchange="prepCagnon()">
+   
+   <label for="angulo" style="margin-left: 16px; margin:right:16px;vertical-align: top">Velocidad de disparo </label>
+   <input type="range" id ="vel" form="ang" max="100" min="20" step="1" value="10" ></span>
+   </p>
+   <input type="button" id="" value="Disparar" onclick="disparar()">&nbsp;&nbsp;
+   <input type="button" id="" value="Iniciar" onclick="iniciar()">
+   </form>
+   </div>
+  </div> 
+  <img src="explosion.gif" id="exp" style="display:none" alt="exp">
+  <img src="cagnon.gif" id ="cagnon" style="display:none"> 
+  <img src="ciudad.gif" id ="ciudad" style="display:none"> 
+  <img src="ciudad2.gif" id ="ciudad2" style="display:none"> 
+  <img src="nubes1.gif" id ="nubes1" style="display:none"> 
+  <div id= "log"></div>
+<div>  
+<button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
   
 </div>
 </body>
