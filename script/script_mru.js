@@ -1,7 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 //calculador de velocidad
-
   function calcularVelocidad(event) {
     event.preventDefault();
 
@@ -22,12 +19,10 @@
     const resultadosDiv = document.getElementById("resultadosVelocidad");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>Al recorrer ${distancia_mru_v}m en ${tiempo_mru_v}s, la velocidad sería: ${velocidad_mru_v.toFixed(2)}m/s</p>
-    `;
+      <p>Al recorrer ${distancia_mru_v}m en ${tiempo_mru_v}s, la velocidad sería: ${velocidad_mru_v.toFixed(2)}m/s</p>`;
   }
 
 //calculador de distancia
-
   function calcularDistancia(event) {
     event.preventDefault();
 
@@ -48,12 +43,10 @@
     const resultadosDiv = document.getElementById("resultadosDistancia");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>Con una velocidad de ${velocidad_mru_d}m/s durante ${tiempo_mru_d}s, la distancia recorrida sería: ${distancia_mru_d.toFixed(2)}m</p>
-    `;
+      <p>Con una velocidad de ${velocidad_mru_d}m/s durante ${tiempo_mru_d}s, la distancia recorrida sería: ${distancia_mru_d.toFixed(2)}m</p>`;
   }
 
 //calculador de tiempo
-
   function calcularTiempo(event) {
     event.preventDefault();
 
@@ -74,12 +67,10 @@
     const resultadosDiv = document.getElementById("resultadosTiempo");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>Para recorrer ${distancia_mru_t}m con una velocidad de ${velocidad_mru_t}m/s, se tardaría aproximadamente ${tiempo_mru_t.toFixed(2)}s</p>
-    `;
+      <p>Para recorrer ${distancia_mru_t}m con una velocidad de ${velocidad_mru_t}m/s, se tardaría aproximadamente ${tiempo_mru_t.toFixed(2)}s</p>`;
   }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//animacion
 const containerMRU = document.querySelector(".container_a_cl");
 const ballMRU = document.querySelector(".balldmru");
 const velocityInputMRU = document.getElementById("velocity-input-mru");

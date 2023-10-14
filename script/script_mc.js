@@ -14,8 +14,7 @@ function calcularVelocidadLineal(event) {
     const resultadosDiv = document.getElementById("resultadosVelocidadLineal");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>La velocidad lineal (v) es: ${velocidadLineal.toFixed(2)} m/s.</p>
-    `;
+      <p>La velocidad lineal (v) es: ${velocidadLineal.toFixed(2)} m/s.</p>`;
   }
   
   // Calculador de velocidad angular
@@ -33,8 +32,7 @@ function calcularVelocidadLineal(event) {
     const resultadosDiv = document.getElementById("resultadosVelocidadAngular");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>La velocidad angular (ω) es: ${velocidadAngular.toFixed(2)} rad/s.</p>
-    `;
+      <p>La velocidad angular (ω) es: ${velocidadAngular.toFixed(2)} rad/s.</p>`;
   }
   
   // Calculador de periodo
@@ -52,8 +50,7 @@ function calcularVelocidadLineal(event) {
     const resultadosDiv = document.getElementById("resultadosPeriodo");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>El periodo (T) es: ${periodo.toFixed(2)} segundos.</p>
-    `;
+      <p>El periodo (T) es: ${periodo.toFixed(2)} segundos.</p>`;
   }
   
   // Calculador de frecuencia
@@ -71,8 +68,7 @@ function calcularVelocidadLineal(event) {
     const resultadosDiv = document.getElementById("resultadosFrecuencia");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>La frecuencia (f) es: ${frecuencia.toFixed(2)} Hz.</p>
-    `;
+      <p>La frecuencia (f) es: ${frecuencia.toFixed(2)} Hz.</p>`;
   }
   
   // Calculador de aceleración centrípeta
@@ -91,7 +87,5 @@ function calcularVelocidadLineal(event) {
     const resultadosDiv = document.getElementById("resultadosAceleracionCentripeta");
     resultadosDiv.innerHTML = `
       <h3>Resultados:</h3>
-      <p>La aceleración centrípeta (ac) es: ${aceleracionCentripeta.toFixed(2)} m/s².</p>
-    `;
+      <p>La aceleración centrípeta (ac) es: ${aceleracionCentripeta.toFixed(2)} m/s².</p>`;
   }
-  

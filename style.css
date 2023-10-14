@@ -1,18 +1,14 @@
 :root{
-    --primary: #fffb13;
-    --primary2: #fffb13;
-    --secondary: #020227;
-    --secondary2: #01031a;
+    --background2: #050336;
+    --background: #030018;
+    --primary: #fac400;
+    --secondary: #0c1431;
+    --accent: #ceae3b;
+    --primary2: #d4a704;
     --text: #ffffffd7;
 }
-/* fondo */
 body {
-    background: linear-gradient(to right, var(--secondary) ,var(--secondary2) ); 
-    /*background-image: url(img/el_real.jpg);*/
-    /*background: #000627;
-    background: -moz-linear-gradient(centro, #000627 0%, #00030E 50%, #000627 100%);
-    background: -webkit-linear-gradient(centro, #000627 0%, #00030E 50%, #000627 100%);
-    background: linear-gradient(to right, #000627 0%, #00030E 50%, #000627 100%);*/
+    background: linear-gradient(to right, var(--background) ,var(--background2) ); 
     margin: 0;
     padding: 0;
     Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
@@ -39,15 +35,7 @@ p{
 li{
     color: var(--text);
 }
-.mi-imagen {
-    width: auto; /* ajusta el ancho de la imagen */
-    max-width: 80vw;
-    height: auto; /* ajusta automáticamente la altura proporcionalmente */
-    display: flex; /* establece la imagen como un bloque para aplicar propiedades de posicionamiento */
-    margin: 0px 0px 0px 0px; /* centra horizontalmente la imagen */
-    position: relative; /* permite ajustar la posición de la imagen */
-}
-.boton_volver {/* botones de volver */
+.boton_volver {
     background-color: #3498db;
     border: solid 1px #000000;
     color: white;
@@ -57,18 +45,18 @@ li{
     display: flex;
     justify-content: center;
     font-size: 18px;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     margin: 30px auto;
     user-select: none;
 }
 .boton_volver:hover {
-    transform: scale(1.1); /* Aplica un efecto de escala al 110% */
+    transform: scale(1.1);
+    color: #020227;
 }
 .banda-superior {
-    background-color: rgba(102, 102, 102, 0.6); /* Cambia el último valor (0.8) para ajustar la transparencia */
+    background-color: rgba(102, 102, 102, 0.6);
     color: #ffffff;
-    padding: 10px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -80,8 +68,7 @@ li{
 /* menu lateral */
 .container .btn-menu,.logo {
     line-height: 100px;
-    margin-left: 10px;
-    margin-top: 12px;
+    margin-left: 22px;
 }
 .container .btn-menu label { /* boton menu lateral */
     color: #fff;
@@ -114,7 +101,7 @@ li{
     border-bottom: 2px solid #c7c7c7;
     padding-bottom: 5px;
 }
-/* Menù lateral */
+/* Menù lateral abierto*/
 #btn-menu{
     display: none;
 }
@@ -169,11 +156,11 @@ li{
     cursor: pointer;
     font-size: 18px;
 }
-/*Fin de Menù lateral*/
 input[type="checkbox"] {/*oculta el checkbox del menu lateral*/
     display: none;
 }
-details{ /*menus de la calculadora de los movimientos*/
+/*menus de la calculadora de los movimientos*/
+details{ 
     background: #99a7cf;
     padding: 0.9rem;
     margin: 0.5rem;
@@ -187,7 +174,6 @@ details{ /*menus de la calculadora de los movimientos*/
     justify-content: center; /* Centra horizontalmente los elementos dentro del .outer-container */
     margin: 0;
 }
-
 .container_ejercicio {
     width: 100%;
     max-width: 1000px;
@@ -196,7 +182,6 @@ details{ /*menus de la calculadora de los movimientos*/
     border-radius: 12px;
     background-color: #757575;
 }
-
 /*animaciones cl*/
 .animacion{
     margin-top: 50px;
@@ -206,8 +191,8 @@ details{ /*menus de la calculadora de los movimientos*/
     align-items: center;
     flex-direction: column;
 }
-/*animaciones mru y mrua*/
-  .container_a_mru {
+/*animaciones mru*/
+.container_a_mru {
     width: 525px;
     height: 200px;
     border: 1px solid #ccc;
@@ -224,6 +209,7 @@ details{ /*menus de la calculadora de los movimientos*/
     left: 10%;
     transform: translateX(-50%);  
 }
+/*animacion mrua*/
 .container_a_mrua {
     width: 600px;
     height: 200px;
@@ -241,7 +227,7 @@ details{ /*menus de la calculadora de los movimientos*/
     left: 10%;
     transform: translateX(-50%);  
 }
-/*style de la animacion caida libre*/
+/*animacion caida libre*/
 .container_a_cl {
     width: 200px;
     height: 400px;

@@ -318,7 +318,7 @@ function desplazar(time){
       explosion.etapa=0
       if (proyectil.fin == 2){
         objetivo.cambiaImg("ciudad2", 100, 46);
-        }
+      }
       window.cancelAnimationFrame(oAnim);
       }
   }

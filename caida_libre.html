@@ -104,8 +104,8 @@
   </div>  
   <h1>Simulador de gravedad</h1>
   <p>Un pequeño ejemplo sobre la caida libre, ¡Animate a interactuar con esta!</p>
+  
   <div class="animacion">
-    
     <label for="gravity-input"><p>Gravedad (m/s²)</p>:</label>
     <input type="number" id="gravity-input" step="0.1" value="9.8">
       <div class="container_a_cl">
@@ -113,51 +113,6 @@
       </div>
     <button class="start-button" onclick="startAnimation()">Iniciar animación</button>
   </div>
-  
-  <script>
-    const container = document.querySelector(".container_a_cl");
-    const ball = document.querySelector(".ball");
-    const gravityInput = document.getElementById("gravity-input");
-    let position = 0; // Posición inicial de la pelota
-    let velocity = 0; // Velocidad inicial de la pelota
-    let gravity = parseFloat(gravityInput.value); // Aceleración gravitacional (m/s^2)
-    const timeInterval = 10; // Intervalo de tiempo para la animación (ms)
-    let animationInterval;
-    
-    function animate() {
-      // Calcular la nueva posición y velocidad utilizando las ecuaciones cinemáticas
-      velocity += (gravity*10) * (timeInterval / 1000);
-      position += velocity * (timeInterval / 1000);
-      
-      // Actualizar la posición de la pelota
-      ball.style.top = `${position}px`;
-      
-      // Verificar si la pelota ha alcanzado el borde inferior del contenedor
-      const containerHeight = container.clientHeight;
-      const ballHeight = ball.clientHeight;
-      if (position + ballHeight >= containerHeight) {
-        // Si ha alcanzado el borde inferior, detener la animación
-        clearInterval(animationInterval);
-      }
-    }
-    
-    function startAnimation() {
-      // Reiniciar la posición y velocidad
-      position = 0;
-      velocity = 0;
-      
-      // Actualizar la gravedad con el valor ingresado por el usuario
-      gravity = parseFloat(gravityInput.value);
-      
-      // Detener la animación anterior si existe
-      if (animationInterval) {
-        clearInterval(animationInterval);
-      }
-      
-      // Iniciar la nueva animación
-      animationInterval = setInterval(animate, timeInterval);
-    }
-  </script>
 
   <div class="outer-container">
     <div class="container_ejercicio">
