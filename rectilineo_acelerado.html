@@ -145,7 +145,7 @@
       <div class="container_a_mrua">
         <div class="balldmrua"></div>
       </div>
-      <button class="start-button" onclick="startAnimationMRUA()">Iniciar animación MRUA</button>
+      <button class="botones" onclick="startAnimationMRUA()">Iniciar animación MRUA</button>
     </div>
   </div>
 
@@ -153,7 +153,7 @@
   <div class="container_ejercicio">
     <h1>Ejercicio 1</h1>
     <p>Un automóvil acelera a una tasa de 2 m/s² durante 5 segundos. Calcula la velocidad final del automóvil.</p>
-    <button onclick="mostrarSolucion(1)">Mostrar Solución</button>
+    <button class="botones" onclick="mostrarSolucion(1)">Mostrar Solución</button>
     <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = 2 m/s².<br>Tiempo (t) = 5 segundos.<br>Fórmula para la velocidad final (vf) en MRUA:<br>vf = vi + (a * t)<br>Si la velocidad inicial (vi) es 0 m/s:<br>vf = 0 m/s + (2 m/s² * 5 s) = 10 m/s</p>
   </div>
 </div>
@@ -162,7 +162,7 @@
   <div class="container_ejercicio">
     <h1>Ejercicio 2</h1>
     <p>Un objeto se mueve con una aceleración de 3 m/s² y alcanza una velocidad final de 15 m/s. Calcula la distancia que recorrió durante el movimiento.</p>
-    <button onclick="mostrarSolucion(2)">Mostrar Solución</button>
+    <button class="botones" onclick="mostrarSolucion(2)">Mostrar Solución</button>
     <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = 3 m/s².<br>Velocidad final (vf) = 15 m/s.<br>Fórmula para la distancia (d) en MRUA:<br>d = (vf^2 - vi^2) / (2 * a)<br>Si la velocidad inicial (vi) es 0 m/s:<br>d = (15 m/s)^2 / (2 * 3 m/s²) = 37.5 metros</p>
   </div>
 </div>
@@ -171,12 +171,12 @@
   <div class="container_ejercicio">
     <h1>Ejercicio 3</h1>
     <p>Un objeto se desplaza con una aceleración de -1.5 m/s² y recorre una distancia de 24 metros. Calcula el tiempo que tardó en recorrer esa distancia.</p>
-    <button onclick="mostrarSolucion(3)">Mostrar Solución</button>
+    <button class="botones" onclick="mostrarSolucion(3)">Mostrar Solución</button>
     <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = -1.5 m/s².<br>Distancia (d) = 24 metros.<br>Fórmula para el tiempo (t) en MRUA:<br>t = (vf - vi) / a<br>Si la velocidad inicial (vi) es 0 m/s:<br>t = (vf - 0 m/s) / -1.5 m/s² = -16 segundos</p>
   </div>
 </div>
 
-  <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+  <button class="botones" onclick="window.location.href='index.html'">Volver al menú</button>
 
   <script src="script.js"></script>
   <script src="script/script_mrua.js"></script>

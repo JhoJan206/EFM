@@ -36,11 +36,11 @@ p{
 li{
     color: var(--text);
 }
-.boton_volver {
+.botones {
     background-color: #3498db;
     border: solid 1px #000000;
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: flex;
@@ -51,7 +51,7 @@ li{
     margin: 30px auto;
     user-select: none;
 }
-.boton_volver:hover {
+.botones:hover {
     transform: scale(1.1);
     color: #020227;
 }

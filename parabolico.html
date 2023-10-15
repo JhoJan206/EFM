@@ -131,7 +131,7 @@
     <div class="container_ejercicio">
       <h1>Ejercicio 1</h1>
       <p>Un objeto se lanza con una velocidad inicial de 10 m/s a un ángulo de 30 grados con respecto a la horizontal. Encuentra la altura máxima que alcanza el objeto.</p>
-      <button onclick="mostrarSolucion(1)">Mostrar Solución</button>
+      <button class="botones" onclick="mostrarSolucion(1)">Mostrar Solución</button>
       <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial, v0 = 10 m/s.<br>Ángulo de lanzamiento, θ = 30 grados.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para la altura máxima (h):<br>h = (v0^2 * sin^2(θ)) / (2 * g)<br>Sustitución de valores:<br>h = (10^2 * sin^2(30°)) / (2 * 9.8)<br>h ≈ 2.55 metros</p>
     </div>
   </div>
@@ -140,7 +140,7 @@
     <div class="container_ejercicio">
       <h1>Ejercicio 2</h1>
       <p>Un proyectil es lanzado horizontalmente desde una altura de 40 metros. Encuentra el tiempo que tarda en llegar al suelo.</p>
-      <button onclick="mostrarSolucion(2)">Mostrar Solución</button>
+      <button class="botones" onclick="mostrarSolucion(2)">Mostrar Solución</button>
       <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Altura inicial, h = 40 metros.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para el tiempo de vuelo (t):<br>t = sqrt((2 * h) / g)<br>Sustitución de valores:<br>t = sqrt((2 * 40) / 9.8)<br>t ≈ 2.03 segundos</p>
     </div>
   </div>
@@ -149,7 +149,7 @@
     <div class="container_ejercicio">
       <h1>Ejercicio 3</h1>
       <p>Un proyectil se lanza con una velocidad inicial de 15 m/s a un ángulo de 45 grados con respecto a la horizontal. Encuentra el alcance horizontal.</p>
-      <button onclick="mostrarSolucion(3)">Mostrar Solución</button>
+      <button class="botones" onclick="mostrarSolucion(3)">Mostrar Solución</button>
       <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial, v0 = 15 m/s.<br>Ángulo de lanzamiento, θ = 45 grados.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para el alcance horizontal (R):<br>R = (v0^2 * sin(2θ)) / g<br>Sustitución de valores:<br>R = (15^2 * sin(2 * 45°)) / 9.8<br>R ≈ 15.31 metros</p>
     </div>
   </div>
@@ -184,7 +184,7 @@
   <img src="gif/nubes1.gif" id ="nubes1" style="display:none"> 
   <div id= "log"></div>
  
-    <button class="boton_volver" onclick="window.location.href='index.html'">Volver al menú</button>
+    <button class="botones" onclick="window.location.href='index.html'">Volver al menú</button>
   </div>
 
   <script src="script.js"></script>
