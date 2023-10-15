@@ -46,7 +46,8 @@ function calcularAlturaTiempo(event){
   
     document.getElementById('resultadosAlturaTiempo').innerHTML = `<h3>Altura en función del tiempo (h):</h3>${alturaTiempo.toFixed(2)} metros`;
 }
-  
+
+//animacion
 // Funciones auxiliares
 function calcularAlturaMaximaParabolico(v0, theta, g){
   theta = gradosARadianes(theta);

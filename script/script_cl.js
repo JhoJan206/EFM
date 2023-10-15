@@ -63,10 +63,8 @@ const container = document.querySelector(".container_a_cl");
         // Calcular la nueva posición y velocidad utilizando las ecuaciones cinemáticas
         velocity += (gravity*10) * (timeInterval / 1000);
         position += velocity * (timeInterval / 1000);
-      
         // Actualizar la posición de la pelota
         ball.style.top = `${position}px`;
-      
         // Verificar si la pelota ha alcanzado el borde inferior del contenedor
         const containerHeight = container.clientHeight;
         const ballHeight = ball.clientHeight;
@@ -80,15 +78,12 @@ const container = document.querySelector(".container_a_cl");
       // Reiniciar la posición y velocidad
       position = 0;
       velocity = 0;
-      
       // Actualizar la gravedad con el valor ingresado por el usuario
       gravity = parseFloat(gravityInput.value);
-      
       // Detener la animación anterior si existe
-      if (animationInterval) {
+      if (animationInterval){
         clearInterval(animationInterval);
       }
-      
       // Iniciar la nueva animación
       animationInterval = setInterval(animate, timeInterval);
     }

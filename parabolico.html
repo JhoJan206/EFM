@@ -160,21 +160,23 @@
   </div>
   
   <body onload="iniciar()">
-  <div style="margin:0 auto; width:1000px">
-    <canvas id="marco" width="1000" height="600" style="background-image: url(img/fondo2.png); background-size: cover;"></canvas>
-    <div style="text-align:center">
-      <form action="" id="ang"><p>
-        <label for="angulo" style="margin-right: 16px; vertical-align: top">Angulo de disparo </label>
-        <input type="range" id ="angulo" form="ang" max="90" min="0" step="1" value="30" onchange="prepCagnon()">
-        
-        <label for="angulo" style="margin-left: 16px; margin-right:16px;vertical-align: top">Velocidad de disparo <label>
-        <input type="range" id ="vel" form="ang" max="100" min="20" step="1" value="10" ></span>
-        </p>
-        <input type="button" id="" value="Disparar" onclick="disparar()">&nbsp;&nbsp;
-        <input type="button" id="" value="Iniciar" onclick="iniciar()">
-      </form>
-    </div>
-  </div> 
+  <div class="contenedor">
+        <canvas id="marco" width="1000" height="550" class="canvas"></canvas>
+        <div class="form-container">
+            <form action="" id="ang">
+                <p>
+                    <label for="angulo">Ángulo de disparo </label>
+                    <input type="range" id="angulo" form="ang" max="90" min="0" step="1" value="30" onchange="prepCagnon()">
+                    
+                    <label for="velocidad">Velocidad de disparo </label>
+                    <input type="range" id="vel" form="ang" max="100" min="20" step="1" value="10">
+                </p>
+                <input type="button" id="" value="Disparar" onclick="disparar()">&nbsp;&nbsp;
+                <input type="button" id="" value="Iniciar" onclick="iniciar()">
+            </form>
+        </div>
+  </div>
+  
   <img src="gif/explosion.gif" id="exp" style="display:none" alt="exp">
   <img src="gif/cagnon.gif" id ="cagnon" style="display:none"> 
   <img src="gif/ciudad.gif" id ="ciudad" style="display:none"> 

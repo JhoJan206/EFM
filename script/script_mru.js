@@ -102,7 +102,7 @@ function animateMRU() {
   }
   timePassed += timeIntervalMRU / 950; // Convertir el intervalo a segundos
 
-  if (roundedDistance >= 500) {
+  if (roundedDistance >= 325) {
     // Detener la animación
     clearInterval(animationIntervalMRU);
   }

@@ -6,7 +6,6 @@
   <title>Simulacion</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
   <body>
   
   <header>
@@ -126,7 +125,8 @@
 
   <input type="checkbox" id="btn-menu">
   <div class="container-menu">
-    <nav class="cont-menu">
+    <div class="cont-menu">
+      <nav>
         <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
         <a href='caida_libre.html'>Caída Libre</a>
         <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
@@ -134,15 +134,14 @@
         <a href='circular.html'">Movimiento Circular</a>
       </nav>
       <label for="btn-menu">✖️</label>
-  </div>
+    </div>
+  </div>  
+
   
   <div class="animacion">
     <div class="animación-mrua">
-      <label for="velocity-input"><p>Velocidad inicial (m/s):</p></label>
-      <input type="number" id="velocity-input-mrua" step="0.1">
       <label for="acceleration-input"><p>Aceleración (m/s²):</p></label>
       <input type="number" id="acceleration-input-mrua" step="0.01">
-      <p>Velocidad cada 15 metros:</p> <span id="speed-display"><p>0m/s</p></span> 
       <div class="container_a_mrua">
         <div class="balldmrua"></div>
       </div>
