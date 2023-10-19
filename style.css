@@ -1,6 +1,6 @@
 :root{
-    --background: #e6ffe9;
-    --background2: #edfaed;
+    --background: #fcfcfc;
+    --background2: #edfced;
     --primary: #fac400;
     --secondary: #0c1431;
     --accent: #ceae3b;
@@ -61,6 +61,7 @@ li{
     min-height: 60px;
     background-color: #ffffff;
     color: #ffffff;
+    margin-bottom: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -326,3 +327,39 @@ details{
     from { transform: rotate(0deg)  translate(-127px) rotate(0deg); }
     to { transform: rotate(360deg) translate(-127px) rotate(-360deg); }
 }
+
+footer {
+    height: 100%;
+    background-color: var(--background);
+    border: solid #00000025 1px;
+    box-shadow: 0px 0px 8px 1px var(--sombras);
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  footer img {
+    width: 100px;
+    justify-content: left;
+  }
+  
+  .info {
+    text-align: center;
+  }
+  
+  .contact {
+    text-align: left;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    footer {
+      flex-direction: column;
+    }
+    .info,
+    .contact {
+      margin-top: 10px;
+    }
+  }

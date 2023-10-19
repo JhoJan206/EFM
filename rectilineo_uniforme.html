@@ -40,7 +40,7 @@
 
     <div class="section">
       <h1>Fórmulas</h1>
-      <h2>En el movimiento rectilíneo uniforme, se utilizan las siguientes fórmulas:</h2>
+      <h3>En el movimiento rectilíneo uniforme, se utilizan las siguientes fórmulas:</h3>
       <ul>
         <li>Velocidad (v): v = x / t</li>
         <li>Distancia (x): x = v * t</li>
@@ -49,17 +49,17 @@
     </div>
   </div>
 
+  <h1>Calculadoras De MRU</h1>
   <!-- ------------ velocidad ------------ -->
   <details>
     <summary>Calculador De Velocidad</summary>
     <div class="section">
-      <h2>Simulador de Movimiento Rectilíneo Uniforme</h2>
       <li>Calculador de velocidad</li>
       <form id="velocidadForm" onsubmit="calcularVelocidad(event)">
         <label for="distancia">Distancia (x):</label>
-        <input type="number" id="distancia_mru_v" name="distancia_mru_v" required>
+        <input type="text" id="distancia_mru_v" name="distancia_mru_v">
         <label for="tiempo">Tiempo (s):</label>
-        <input type="number" id="tiempo_mru_v" name="tiempo_mru_v" required>
+        <input type="text" id="tiempo_mru_v" name="tiempo_mru_v">
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosVelocidad"></div>
@@ -112,6 +112,7 @@
     </div>
   </div>
 
+  <h1>Simulacion De MRU</h1>
   <div class="animacion">
     <div class="animación-mru">
       <label for="velocity-input">Velocidad (m/s):</label>
@@ -124,6 +125,7 @@
     </div>
   </div>
 
+  <h1>Ejercicios De MRU</h1>
   <div class="outer-container">
     <div class="container_ejercicio">
       <h1>Ejercicio 1</h1>
@@ -152,10 +154,21 @@
   </div>
 
   <button class="botones" onclick="window.location.href='index.html'">Volver al menú</button>
+</div>
+
+  <footer>
+    <img src="img/logo iti 2.png" alt="ITI">
+    <div class="info">
+      <h1>Instituto Tecnico Industrial Lucio Pabon Nuñez</h1>
+      <div class="contact">
+        <h2>Contacto Creadores</h2>
+        <p>Email: contacto@ejemplo.com</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
   <script src="script/script_mru.js"></script>
 
-  </div>
 </body>
 </html>

@@ -47,6 +47,7 @@
       </ul>
     </div>
 
+  <h1>Calculadoras De MRUA</h1>  
   <!-- Calculador de velocidad final -->
   <details>
     <summary>Calculador de velocidad final</summary>
@@ -137,11 +138,18 @@
     </div>
   </div>  
 
-  
+  <h1>Simulacion De MRUA</h1>
   <div class="animacion">
     <div class="animación-mrua">
-      <label for="acceleration-input">Aceleración (m/s²):</label>
-      <input type="number" id="acceleration-input-mrua" step="0.01">
+      <div>
+        <label for="velocity-input">Velocidad inicial (m/s):</label>
+        <input type="number" id="velocity-input-mrua" step="0.1">
+      </div>
+      <div>
+        <label for="acceleration-input">Aceleración (m/s²):</label>
+        <input type="number" id="acceleration-input-mrua" step="0.01">
+      </div>
+      Velocidad: <span id="speed-display">0 m/s</span>
       <div class="container_a_mrua">
         <div class="balldmrua"></div>
       </div>
@@ -149,38 +157,49 @@
     </div>
   </div>
 
-<div class="outer-container">
-  <div class="container_ejercicio">
-    <h1>Ejercicio 1</h1>
-    <p>Un automóvil acelera a una tasa de 2 m/s² durante 5 segundos. Calcula la velocidad final del automóvil.</p>
-    <button class="botones" onclick="mostrarSolucion(1)">Mostrar Solución</button>
-    <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = 2 m/s².<br>Tiempo (t) = 5 segundos.<br>Fórmula para la velocidad final (vf) en MRUA:<br>vf = vi + (a * t)<br>Si la velocidad inicial (vi) es 0 m/s:<br>vf = 0 m/s + (2 m/s² * 5 s) = 10 m/s</p>
+  <h1>Ejercicios De MRUA</h1>
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 1</h1>
+      <p>Un automóvil acelera a una tasa de 2 m/s² durante 5 segundos. Calcula la velocidad final del automóvil.</p>
+      <button class="botones" onclick="mostrarSolucion(1)">Mostrar Solución</button>
+      <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = 2 m/s².<br>Tiempo (t) = 5 segundos.<br>Fórmula para la velocidad final (vf) en MRUA:<br>vf = vi + (a * t)<br>Si la velocidad inicial (vi) es 0 m/s:<br>vf = 0 m/s + (2 m/s² * 5 s) = 10 m/s</p>
+    </div>
   </div>
-</div>
 
-<div class="outer-container">
-  <div class="container_ejercicio">
-    <h1>Ejercicio 2</h1>
-    <p>Un objeto se mueve con una aceleración de 3 m/s² y alcanza una velocidad final de 15 m/s. Calcula la distancia que recorrió durante el movimiento.</p>
-    <button class="botones" onclick="mostrarSolucion(2)">Mostrar Solución</button>
-    <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = 3 m/s².<br>Velocidad final (vf) = 15 m/s.<br>Fórmula para la distancia (d) en MRUA:<br>d = (vf^2 - vi^2) / (2 * a)<br>Si la velocidad inicial (vi) es 0 m/s:<br>d = (15 m/s)^2 / (2 * 3 m/s²) = 37.5 metros</p>
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 2</h1>
+      <p>Un objeto se mueve con una aceleración de 3 m/s² y alcanza una velocidad final de 15 m/s. Calcula la distancia que recorrió durante el movimiento.</p>
+      <button class="botones" onclick="mostrarSolucion(2)">Mostrar Solución</button>
+      <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = 3 m/s².<br>Velocidad final (vf) = 15 m/s.<br>Fórmula para la distancia (d) en MRUA:<br>d = (vf^2 - vi^2) / (2 * a)<br>Si la velocidad inicial (vi) es 0 m/s:<br>d = (15 m/s)^2 / (2 * 3 m/s²) = 37.5 metros</p>
+    </div>
   </div>
-</div>
 
-<div class="outer-container">
-  <div class="container_ejercicio">
-    <h1>Ejercicio 3</h1>
-    <p>Un objeto se desplaza con una aceleración de -1.5 m/s² y recorre una distancia de 24 metros. Calcula el tiempo que tardó en recorrer esa distancia.</p>
-    <button class="botones" onclick="mostrarSolucion(3)">Mostrar Solución</button>
-    <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = -1.5 m/s².<br>Distancia (d) = 24 metros.<br>Fórmula para el tiempo (t) en MRUA:<br>t = (vf - vi) / a<br>Si la velocidad inicial (vi) es 0 m/s:<br>t = (vf - 0 m/s) / -1.5 m/s² = -16 segundos</p>
+  <div class="outer-container">
+    <div class="container_ejercicio">
+      <h1>Ejercicio 3</h1>
+      <p>Un objeto se desplaza con una aceleración de -1.5 m/s² y recorre una distancia de 24 metros. Calcula el tiempo que tardó en recorrer esa distancia.</p>
+      <button class="botones" onclick="mostrarSolucion(3)">Mostrar Solución</button>
+      <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Aceleración (a) = -1.5 m/s².<br>Distancia (d) = 24 metros.<br>Fórmula para el tiempo (t) en MRUA:<br>t = (vf - vi) / a<br>Si la velocidad inicial (vi) es 0 m/s:<br>t = (vf - 0 m/s) / -1.5 m/s² = -16 segundos</p>
+    </div>
   </div>
-</div>
 
   <button class="botones" onclick="window.location.href='index.html'">Volver al menú</button>
+</div>
+
+  <footer>
+    <img src="img/logo iti 2.png" alt="ITI">
+    <div class="info">
+      <h1>Instituto Tecnico Industrial Lucio Pabon Nuñez</h1>
+      <div class="contact">
+        <h2>Contacto Creadores</h2>
+        <p>Email: contacto@ejemplo.com</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
   <script src="script/script_mrua.js"></script>
-  
-</div>
 </body>
 </html>

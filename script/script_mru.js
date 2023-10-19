@@ -7,7 +7,7 @@
     const tiempo_mru_v = parseFloat(document.getElementById("tiempo_mru_v").value);
 
     // Verificar si los valores son válidos
-    if (isNaN(distancia_mru_v) || isNaN(tiempo_mru_v)) {
+    if (isNaN(parseFloat(distancia_mru_v)) || isNaN(parseFloat(tiempo_mru_v))) {
       alert("Por favor, ingrese valores numéricos válidos.");
       return;
     }

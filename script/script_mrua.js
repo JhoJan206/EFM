@@ -89,44 +89,54 @@ function calcularAceleracion(event) {
 //animacion
 
 const containerMRUA = document.querySelector(".container_a_mrua");
-const ballMRUA = document.querySelector(".balldmrua");
-const velocityInputMRUA = document.getElementById("velocity-input-mrua");
-const accelerationInputMRUA = document.getElementById("acceleration-input-mrua");
-let positionMRUA = 0; // Posición inicial de la pelota
-let timePassedMRUA = 0; // Tiempo transcurrido inicial
-let velocityMRUA = 0; // Velocidad inicial de la pelota
-let accelerationMRUA = 0; // Aceleración de la pelota
-const timeIntervalMRUA = 10; // Intervalo de tiempo para la animación (ms)
-let animationIntervalMRUA;
-
-function animateMRUA() {
-  // Obtener la aceleración
-  accelerationMRUA = parseFloat(accelerationInputMRUA.value);
-
-  // Calcular la nueva posición utilizando la ecuación del MRUA
-  positionMRUA = 0.5 * accelerationMRUA * Math.pow(timePassedMRUA, 2) + velocityMRUA * timePassedMRUA;
-
-  // Calcular la velocidad en el punto actual
-  const currentSpeed = velocityMRUA + accelerationMRUA * timePassedMRUA;
+  const ballMRUA = document.querySelector(".balldmrua");
+  const velocityInputMRUA = document.getElementById("velocity-input-mrua");
+  const accelerationInputMRUA = document.getElementById("acceleration-input-mrua");
+  const speedDisplay = document.getElementById("speed-display");
+  let positionMRUA = 0; // Posición inicial de la pelota
+  let timePassedMRUA = 0; // Tiempo transcurrido inicial
+  let velocityMRUA = 0; // Velocidad inicial de la pelota
+  let accelerationMRUA = 0; // Aceleración de la pelota
+  const timeIntervalMRUA = 10; // Intervalo de tiempo para la animación (ms)
+  let animationIntervalMRUA;
   
-  // Actualizar la posición de la pelota
-  ballMRUA.style.left = `${positionMRUA}px`;
-
-  // Detener la animación si la posición supera cierto límite
-  if (positionMRUA >= 325) {
-    clearInterval(animationIntervalMRUA);
+  function animateMRUA() {
+    // Obtener la velocidad y la aceleración
+    velocityMRUA = parseFloat(velocityInputMRUA.value);
+    accelerationMRUA = parseFloat(accelerationInputMRUA.value);
+  
+    // Calcular la nueva posición utilizando la ecuación del MRUA
+    positionMRUA = 0.5 * accelerationMRUA * Math.pow(timePassedMRUA, 2) + velocityMRUA * timePassedMRUA;
+  
+    // Calcular la velocidad en el punto actual
+    const currentSpeed = velocityMRUA + accelerationMRUA * timePassedMRUA;
+    
+    // Actualizar la posición de la pelota
+    ballMRUA.style.left = `${positionMRUA}px`;
+  
+    // Actualizar la velocidad en pantalla cada 15 metros
+    if (Math.floor(positionMRUA) % 15 === 0) {
+      speedDisplay.textContent = `${currentSpeed.toFixed(2)} m/s`;
+    }
+  
+    // Detener la animación si la posición supera cierto límite
+    if (positionMRUA >= 325) {
+      clearInterval(animationIntervalMRUA);
+    }
+  
+    timePassedMRUA += timeIntervalMRUA / 1000;
   }
-  timePassedMRUA += timeIntervalMRUA / 1000;
-}
+  
+  function startAnimationMRUA() {
+    // Reiniciar valores
+    positionMRUA = 0;
+    timePassedMRUA = 0;
 
-function startAnimationMRUA() {
-  // Reiniciar valores
-  positionMRUA = 0;
-  timePassedMRUA = 0;
-  // Detener animación anterior si existe
-  if (animationIntervalMRUA) {
-    clearInterval(animationIntervalMRUA);
+    // Detener animación anterior si existe
+    if (animationIntervalMRUA) {
+      clearInterval(animationIntervalMRUA);
+    }
+  
+    // Iniciar la nueva animación
+    animationIntervalMRUA = setInterval(animateMRUA, timeIntervalMRUA);
   }
-  // Iniciar la nueva animación
-  animationIntervalMRUA = setInterval(animateMRUA, timeIntervalMRUA);
-}
