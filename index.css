@@ -1,10 +1,13 @@
 :root{
-    --background: #000000;
+    --background: #e6ffe9;
+    --background2: #f6fcf6;
     --primary: #fac400;
     --secondary: #0c1431;
     --accent: #ceae3b;
     --primary2: #d4a704;
-    --text: #ffffffd7;
+    --text: #000000d7;
+    --sombras: rgba(0, 0, 0, 0.336);
+    --iti:#1B8332;
 }
 *{
     margin: 0;
@@ -25,17 +28,17 @@
     height: 430px;
     max-height: 430px;
     margin: 8px;
-    border: var(--primary) solid 1.5px;
+    border: var(--iti) solid 1.5px;
     border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 2px;
-    background-color:#00000046;
+    background-color:var(--background2);
     cursor: pointer;
 }
 .card:hover{
-    background-color:#29280346;
+    background-color:#2928031c;
 }
 .card:hover > header img{
     transform: scale(1.025);
@@ -59,7 +62,6 @@
     gap: 6px;
 }
 .card main h1{
-    color: var(--primary);
     justify-self: center;
     text-align: left;
 }

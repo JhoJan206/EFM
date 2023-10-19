@@ -127,6 +127,33 @@
     </div>
   </details>
 
+  <h1>Animación de Movimiento Parabólico</h1>
+  <p>Animacion representativa del Movimiento Parabolico</p>
+  <body onload="iniciar()">
+  <div class="contenedor">
+        <canvas id="marco" width="1000" height="550" class="canvas"></canvas>
+        <div class="form-container">
+            <form action="" id="ang">
+                <p class="conf-mp">
+                    <label for="angulo">Ángulo de disparo </label>
+                    <input type="range" id="angulo" form="ang" max="90" min="0" step="1" value="30" onchange="prepCagnon()">
+                    
+                    <label for="velocidad">Velocidad de disparo </label>
+                    <input type="range" id="vel" form="ang" max="100" min="20" step="1" value="10">
+                </p>
+                <input type="button" id="" value="Disparar" onclick="disparar()">&nbsp;&nbsp;
+                <input type="button" id="" value="Iniciar" onclick="iniciar()">
+            </form>
+        </div>
+  </div>
+  
+  <img src="gif/explosion.gif" id="exp" style="display:none" alt="exp">
+  <img src="gif/cagnon.gif" id ="cagnon" style="display:none"> 
+  <img src="gif/ciudad.gif" id ="ciudad" style="display:none"> 
+  <img src="gif/ciudad2.gif" id ="ciudad2" style="display:none"> 
+  <img src="gif/nubes1.gif" id ="nubes1" style="display:none"> 
+  <div id= "log"></div>
+
   <div class="outer-container">
     <div class="container_ejercicio">
       <h1>Ejercicio 1</h1>
@@ -153,36 +180,6 @@
       <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad inicial, v0 = 15 m/s.<br>Ángulo de lanzamiento, θ = 45 grados.<br>Aceleración debido a la gravedad, g = 9.8 m/s².<br>Fórmula para el alcance horizontal (R):<br>R = (v0^2 * sin(2θ)) / g<br>Sustitución de valores:<br>R = (15^2 * sin(2 * 45°)) / 9.8<br>R ≈ 15.31 metros</p>
     </div>
   </div>
-  
-  <div class="section">
-    <h1>Animación de Movimiento Parabólico</h1>
-    <p>Animacion representativa del Movimiento Parabolico</p>
-  </div>
-  
-  <body onload="iniciar()">
-  <div class="contenedor">
-        <canvas id="marco" width="1000" height="550" class="canvas"></canvas>
-        <div class="form-container">
-            <form action="" id="ang">
-                <p>
-                    <label for="angulo">Ángulo de disparo </label>
-                    <input type="range" id="angulo" form="ang" max="90" min="0" step="1" value="30" onchange="prepCagnon()">
-                    
-                    <label for="velocidad">Velocidad de disparo </label>
-                    <input type="range" id="vel" form="ang" max="100" min="20" step="1" value="10">
-                </p>
-                <input type="button" id="" value="Disparar" onclick="disparar()">&nbsp;&nbsp;
-                <input type="button" id="" value="Iniciar" onclick="iniciar()">
-            </form>
-        </div>
-  </div>
-  
-  <img src="gif/explosion.gif" id="exp" style="display:none" alt="exp">
-  <img src="gif/cagnon.gif" id ="cagnon" style="display:none"> 
-  <img src="gif/ciudad.gif" id ="ciudad" style="display:none"> 
-  <img src="gif/ciudad2.gif" id ="ciudad2" style="display:none"> 
-  <img src="gif/nubes1.gif" id ="nubes1" style="display:none"> 
-  <div id= "log"></div>
  
     <button class="botones" onclick="window.location.href='index.html'">Volver al menú</button>
   </div>

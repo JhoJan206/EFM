@@ -1,15 +1,17 @@
 :root{
-    --background2: #050336;
-    --background: #030018;
+    --background: #e6ffe9;
+    --background2: #edfaed;
     --primary: #fac400;
     --secondary: #0c1431;
     --accent: #ceae3b;
     --primary2: #d4a704;
-    --text: #ffffffd7;
+    --text: #000000d7;
+    --sombras: rgba(0, 0, 0, 0.336);
+    --iti:#1B8332;
 }
 body {
     background: linear-gradient(to right, var(--background) ,var(--background2) ); 
-    margin: 0;
+    margin: 2px;
     padding: 0;
     Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
@@ -18,7 +20,7 @@ body {
     margin: 0 auto;
 }
 h1{
-    color: var(--primary2);
+    color: #1B8332;
 }
 h2{
     color: var(--text);
@@ -30,7 +32,7 @@ h4{
     color: var(--text);
 }
 p{
-    color: #E5E5E5;
+    color: var(--text);
     font-size: 18px;
 }
 li{
@@ -56,8 +58,8 @@ li{
     color: #020227;
 }
 .banda-superior {
-    min-height: 50px;
-    background-color: rgba(102, 102, 102, 0.6);
+    min-height: 60px;
+    background-color: #ffffff;
     color: #ffffff;
     text-align: center;
     display: flex;
@@ -65,7 +67,9 @@ li{
     height: auto;
     max-height: 70px;
     box-sizing: border-box; /* Incluye el relleno en el cálculo de la altura */
+    box-shadow: 0px 4px 6px var(--sombras); /* Sombra en la parte inferior */
 }
+
 .banda-superior h1 {
     margin: 0 auto; /* Elimina el margen predeterminado del encabezado */
 }
@@ -75,7 +79,7 @@ li{
     margin-left: 22px;
 }
 .container .btn-menu label { /* boton menu lateral */
-    color: #fff;
+    color: var(--text);
     font-size: 29px;
     cursor: pointer;
     user-select: none;
@@ -166,8 +170,8 @@ input[type="checkbox"] {/*oculta el checkbox del menu lateral*/
 /*menus de la calculadora de los movimientos*/
 details{ 
     background: #99a7cf;
-    padding: 0.9rem;
-    margin: 0.5rem;
+    padding: 18px;
+    margin-bottom: 15px;
     border-radius: 15px;
     cursor: pointer;
     user-select: none;
@@ -181,10 +185,12 @@ details{
 .container_ejercicio {
     width: 100%;
     max-width: 1000px;
+    border: solid 1px #00000069;
     padding: 10px;
-    border: 3px solid #000000;
+    box-shadow: 0px 0px 8px 1px var(--sombras);
     border-radius: 12px;
-    background-color: #757575;
+    background-color: var(--background);
+    margin-bottom: 16px;
 }
 /*animaciones cl*/
 .animacion{
@@ -269,18 +275,20 @@ details{
     cursor: pointer;
 }
 /*Animacion movimiento circular*/
-.contenedor-circulo{
+.contenedor-circulo {
     width: 300px;
     height: 300px;
-    margin:0 auto; 
-    text-align:center;
+    margin: 0 auto;
+    text-align: center;
     background: #E5E5E5;
-    border-radius:50%;
+    border-radius: 50%;
     background-image: url('img/fondo2.png');
-    background-size: cover; /* Para cubrir todo el contenido del div */
-    background-position: center; /* Centra la imagen en el div */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 30px; /* Ajusta este valor según tus necesidades */
 }
+
 .circulo {
     display:inline-block;
     width: 50px;
@@ -291,9 +299,8 @@ details{
     animation: girar 2s infinite linear;
 }
 /*animacion movimiento parabolico*/
-.contenedor {
-    margin: 0 auto;
-    width: 1000px;
+.contenedor{
+    margin-bottom: 30px;
 }
 .canvas {
     background-image: url('img/fondo2.png');
