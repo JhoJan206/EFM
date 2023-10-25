@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Simulacion</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="animaciones.css">
 </head>
   <body>
   
@@ -56,14 +57,11 @@
         <li>Calculador de velocidad final</li>
         <form id="velocidadFinalForm" onsubmit="calcularVelocidadFinal(event)">
             <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
-            <input type="number" id="velocidad_inicial" name="velocidad_inicial" placeholder="0" >
-
+            <input type="text" id="velocidad_inicial" name="velocidad_inicial" placeholder="0" >
             <label for="aceleracion">Aceleración (m/s²):</label>
-            <input type="number" id="aceleracion" name="aceleracion" required>
-
+            <input type="text" id="aceleracion" name="aceleracion" required>
             <label for="tiempo">Tiempo (s):</label>
-            <input type="number" id="tiempo_mrua_vf" name="tiempo_mrua_vf" required>
-
+            <input type="text" id="tiempo_mrua_vf" name="tiempo_mrua_vf" required>
             <input type="submit" value="Calcular">
         </form>
         <div id="resultadosVelocidadFinal"></div>
@@ -77,11 +75,11 @@
         <li>Calculador de distancia</li>
         <form id="distanciaForm" onsubmit="calcularDistancia(event)">
             <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
-            <input type="number" id="velocidad_inicial_dist" name="velocidad_inicial_dist" placeholder="0">
+            <input type="text" id="velocidad_inicial_dist" name="velocidad_inicial_dist" placeholder="0">
             <label for="aceleracion">Aceleración (m/s²):</label>
-            <input type="number" id="aceleracion_dist" name="aceleracion_dist" required>
+            <input type="text" id="aceleracion_dist" name="aceleracion_dist" required>
             <label for="tiempo">Tiempo (s):</label>
-            <input type="number" id="tiempo_mrua_d" name="tiempo_mrua_d" required>
+            <input type="text" id="tiempo_mrua_d" name="tiempo_mrua_d" required>
             <input type="submit" value="Calcular">
         </form>
         <div id="resultadosDistancia"></div>
@@ -95,11 +93,11 @@
       <li>Calculador de tiempo</li>
       <form id="tiempoForm" onsubmit="calcularTiempo(event)">
         <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
-        <input type="number" id="velocidad_inicial_tiempo" name="velocidad_inicial_tiempo" placeholder="0">
+        <input type="text" id="velocidad_inicial_tiempo" name="velocidad_inicial_tiempo" placeholder="0">
         <label for="aceleracion">Aceleración (m/s²):</label>
-        <input type="number" id="aceleracion_tiempo" name="aceleracion_tiempo" required>
+        <input type="text" id="aceleracion_tiempo" name="aceleracion_tiempo" required>
         <label for="velocidad_final">Velocidad final (m/s):</label>
-        <input type="number" id="velocidad_final" name="velocidad_final" required>
+        <input type="text" id="velocidad_final" name="velocidad_final" required>
         <input type="submit" value="Calcular">
         </form>
       <div id="resultadosTiempo"></div>
@@ -113,11 +111,11 @@
       <li>Calculador de aceleración</li>
       <form id="aceleracionForm" onsubmit="calcularAceleracion(event)">
         <label for="velocidad_inicial">Velocidad inicial (m/s):</label>
-        <input type="number" id="velocidad_inicial_aceleracion" name="velocidad_inicial_aceleracion" placeholder="0">
+        <input type="text" id="velocidad_inicial_aceleracion" name="velocidad_inicial_aceleracion" placeholder="0">
           <label for="velocidad_final">Velocidad final (m/s):</label>
-          <input type="number" id="velocidad_final_aceleracion" name="velocidad_final_aceleracion" required>
+          <input type="text" id="velocidad_final_aceleracion" name="velocidad_final_aceleracion" required>
           <label for="tiempo">Tiempo (s):</label>
-          <input type="number" id="tiempo_mrua_a" name="tiempo_mrua_a" required>
+          <input type="text" id="tiempo_mrua_a" name="tiempo_mrua_a" required>
           <input type="submit" value="Calcular">
       </form>
       <div id="resultadosAceleracion"></div>
@@ -194,7 +192,7 @@
       <h1>Instituto Tecnico Industrial Lucio Pabon Nuñez</h1>
       <div class="contact">
         <h2>Contacto Creadores</h2>
-        <p>Email: contacto@ejemplo.com</p>
+        <a href="https://github.com/JhoJan206">Jhojan David Jacome Montejo</a>
       </div>
     </div>
   </footer>

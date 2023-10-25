@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulacion</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="animaciones.css">
 </head>
 <body>
 
@@ -26,7 +27,7 @@
   </div>
   
   <div class="section">
-    <h1>Conceptos básicos</h1>
+    <h1>Conceptos Básicos</h1>
     <h2>En la caída libre, existen varios conceptos clave:</h2>
     <ul>
       <li>Altura (h): Es la distancia vertical desde la cual se deja caer el objeto. Se mide en metros (m).</li>
@@ -45,15 +46,15 @@
     </ul>
   </div>
   
-  <h1>Calculadoras de Caída Libre</h1>
+  <h1>Calculadoras De Caída Libre</h1>
   <!-- Calculador de altura -->
   <details>
-    <summary>Calculador de Altura</summary>
+    <summary>Calculador De Altura</summary>
     <div class="section">
-      <li>Calculador de altura</li>
+      <li>Calculador de altura con la gravedad de la tierra</li>
       <form id="alturaForm" onsubmit="calcularAltura(event)">
         <label for="tiempo">Tiempo (s):</label>
-        <input type="number" id="tiempo_caida" name="tiempo_caida" required>
+        <input type="text" id="tiempo_caida" name="tiempo_caida" required>
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosAltura"></div>
@@ -67,7 +68,7 @@
       <li>Calculador de tiempo de caída</li>
       <form id="tiempoCaidaForm" onsubmit="calcularTiempoCaida(event)">
         <label for="altura">Altura (m):</label>
-        <input type="number" id="altura_caida" name="altura_caida" required>
+        <input type="text" id="altura_caida" name="altura_caida" required>
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosTiempoCaida"></div>
@@ -81,7 +82,7 @@
       <li>Calculador de velocidad máxima</li>
       <form id="velocidadMaximaForm" onsubmit="calcularVelocidadMaxima(event)">
         <label for="altura">Altura (m):</label>
-        <input type="number" id="altura_maxima" name="altura_maxima" required>
+        <input type="text" id="altura_maxima" name="altura_maxima" required>
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosVelocidadMaxima"></div>
@@ -102,9 +103,8 @@
     </div>
   </div>  
 
-  <h1>Simulador de gravedad</h1>
+  <h1>Simulador De Gravedad</h1>
   <p>Un pequeño ejemplo sobre la caida libre, ¡Animate a interactuar con esta!</p>
-  
   <div class="animacion">
     <label for="gravity-input">Gravedad (m/s²):</label>
     <input type="number" id="gravity-input" step="0.1" value="9.8">
@@ -152,7 +152,7 @@
       <h1>Instituto Tecnico Industrial Lucio Pabon Nuñez</h1>
       <div class="contact">
         <h2>Contacto Creadores</h2>
-        <p>Email: contacto@ejemplo.com</p>
+        <a href="https://github.com/JhoJan206">Jhojan David Jacome Montejo</a>
       </div>
     </div>
   </footer>

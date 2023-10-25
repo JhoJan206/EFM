@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulacion</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="animaciones.css">
 </head>
 <body>
 
@@ -67,9 +68,9 @@
       <li>Calculadora de Altura Máxima</li>
       <form id="alturaMaximaForm" onsubmit="calcularAlturaMaxima(event)">
         <label for="velocidadInicial">Velocidad inicial (v0 en m/s):</label>
-        <input type="number" id="velocidadInicial" name="velocidadInicial" placeholder="0">
+        <input type="text" id="velocidadInicial" name="velocidadInicial" placeholder="0">
         <label for="anguloLanzamiento">Ángulo de lanzamiento (θ en grados):</label>
-        <input type="number" id="anguloLanzamiento" name="anguloLanzamiento" placeholder="0">
+        <input type="text" id="anguloLanzamiento" name="anguloLanzamiento" placeholder="0">
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosAlturaMaxima"></div>
@@ -83,9 +84,9 @@
       <li>Calculadora de Alcance Horizontal</li>
       <form id="alcanceHorizontalForm" onsubmit="calcularAlcanceHorizontal(event)">
         <label for="velocidadInicial_2">Velocidad inicial (v0 en m/s):</label>
-        <input type="number" id="velocidadInicial_2" name="velocidadInicial_2" placeholder="0">
+        <input type="text" id="velocidadInicial_2" name="velocidadInicial_2" placeholder="0">
         <label for="anguloLanzamiento_2">Ángulo de lanzamiento (θ en grados):</label>
-        <input type="number" id="anguloLanzamiento_2" name="anguloLanzamiento_2" placeholder="0">
+        <input type="text" id="anguloLanzamiento_2" name="anguloLanzamiento_2" placeholder="0">
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosAlcanceHorizontal"></div>
@@ -99,9 +100,9 @@
       <li>Calculadora de Tiempo de Vuelo</li>
       <form id="tiempoVueloForm" onsubmit="calcularTiempoVuelo(event)">
         <label for="velocidadInicial_3">Velocidad inicial (v0 en m/s):</label>
-        <input type="number" id="velocidadInicial_3" name="velocidadInicial_3" placeholder="0">
+        <input type="text" id="velocidadInicial_3" name="velocidadInicial_3" placeholder="0">
         <label for="anguloLanzamiento_3">Ángulo de lanzamiento (θ en grados):</label>
-        <input type="number" id="anguloLanzamiento_3" name="anguloLanzamiento_3" placeholder="0">
+        <input type="text" id="anguloLanzamiento_3" name="anguloLanzamiento_3" placeholder="0">
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosTiempoVuelo"></div>
@@ -115,11 +116,11 @@
       <li>Calculadora de Altura en función del Tiempo</li>
       <form id="alturaTiempoForm" onsubmit="calcularAlturaTiempo(event)">
         <label for="velocidadInicial_4">Velocidad inicial (v0 en m/s):</label>
-        <input type="number" id="velocidadInicial_4" name="velocidadInicial_4" placeholder="0">
+        <input type="text" id="velocidadInicial_4" name="velocidadInicial_4" placeholder="0">
         <label for="anguloLanzamiento_4">Ángulo de lanzamiento (θ en grados):</label>
-        <input type="number" id="anguloLanzamiento_4" name="anguloLanzamiento_4" placeholder="0">
+        <input type="text" id="anguloLanzamiento_4" name="anguloLanzamiento_4" placeholder="0">
         <label for="tiempo">Tiempo (t en segundos):</label>
-        <input type="number" id="tiempo" name="tiempo" placeholder="0">
+        <input type="text" id="tiempo" name="tiempo" placeholder="0">
         <input type="submit" value="Calcular">
       </form>
       <div id="resultadosAlturaTiempo"></div>
@@ -190,7 +191,7 @@
       <h1>Instituto Tecnico Industrial Lucio Pabon Nuñez</h1>
       <div class="contact">
         <h2>Contacto Creadores</h2>
-        <p>Email: contacto@ejemplo.com</p>
+        <a href="https://github.com/JhoJan206">Jhojan David Jacome Montejo</a>
       </div>
     </div>
   </footer>
