@@ -9,6 +9,10 @@
 </head>
 <body>
   <body>
+
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
     
   <header>
     <div class="banda-superior">
@@ -21,141 +25,141 @@
     </div>
   </header>
 
-<div class="containerall">
-  <div>
-    <div class="section">
-      <h1>Introducción</h1>
-      <p>El movimiento rectilíneo uniforme es un concepto fundamental en la física que describe el movimiento de un cuerpo a lo largo de una línea recta con velocidad constante. En este tipo de movimiento, la velocidad del objeto no cambia en magnitud ni en dirección a lo largo del tiempo dado que su aceleración es nula.El movimiento rectilíneo uniforme se designa frecuentemente con el acrónimo MRU.</p>
-      <p>De acuerdo con la Primera Ley de Newton, toda partícula puntual permanece en reposo o en movimiento rectilíneo uniforme cuando no hay una fuerza externa que actúe sobre el cuerpo, dado que las fuerzas actuales están en equilibrio, por lo cual su estado es de reposo o de movimiento rectilíneo uniforme. </p>
-    </div>
-
-    <div class="section">
-      <h1>Conceptos básicos</h1>
-      <h2>En el movimiento rectilíneo uniforme, existen varios conceptos clave:</h2>
-      <ul>
-        <li>Distancia (x): Es la posición del objeto a lo largo de la línea recta. Se mide en metros (m).</li>
-        <li>Velocidad (v): Es la magnitud y dirección del desplazamiento del objeto por unidad de tiempo. Se mide en metros por segundo (m/s).</li>
-        <li>Tiempo (t): Es el intervalo de tiempo transcurrido desde el inicio del movimiento. Se mide en segundos (s).</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h1>Fórmulas</h1>
-      <h3>En el movimiento rectilíneo uniforme, se utilizan las siguientes fórmulas:</h3>
-      <ul>
-        <li>Velocidad (v): v = x / t</li>
-        <li>Distancia (x): x = v * t</li>
-        <li>Tiempo (t): t = d / v</li>
-      </ul>
-    </div>
-  </div>
-
-  <h1>Calculadoras De MRU</h1>
-  <!-- ------------ velocidad ------------ -->
-  <details>
-    <summary>Calculador De Velocidad</summary>
-    <div class="section">
-      <li>Calculador de velocidad</li>
-      <form id="velocidadForm" onsubmit="calcularVelocidad(event)">
-        <label for="distancia">Distancia (x):</label>
-        <input type="text" id="distancia_mru_v" name="distancia_mru_v">
-        <label for="tiempo">Tiempo (s):</label>
-        <input type="text" id="tiempo_mru_v" name="tiempo_mru_v">
-        <input type="submit" value="Calcular">
-      </form>
-      <div id="resultadosVelocidad"></div>
-    </div>
-  </details>
-
-  <!-- ------------ Distancia ------------ -->
-  <details>
-    <summary>Calculador De Distancia</summary>
-    <div class="section">
-      <li>Calculador de Distancia</li>
-      <form id="distanciaForm" onsubmit="calcularDistancia(event)">
-        <label for="velocidad">Velocidad (m/s):</label>
-        <input type="text" id="velocidad_mru_d" name="velocidad_mru_d" required>
-        <label for="tiempo">Tiempo (s):</label>
-        <input type="text" id="tiempo_mru_d" name="tiempo_mru_d" required>
-        <input type="submit" value="Calcular">
-      </form>
-      <div id="resultadosDistancia"></div>
-    </div>
-  </details>
-
-  <!-- ------------ tiempo ------------ -->
-  <details>
-    <summary>Calculador De Tiempo</summary>
-    <div class="section">
-      <li>Calculador de Tiempo</li>
-      <form id="tiempoForm" onsubmit="calcularTiempo(event)">
-        <label for="distancia">Distancia (x):</label>
-        <input type="text" id="distancia_mru_t" name="distancia_mru_t" required>
-        <label for="velocidad">Velocidad (m/s):</label>
-        <input type="text" id="velocidad_mru_t" name="velocidad_mru_t" required>
-        <input type="submit" value="Calcular">
-      </form>
-      <div id="resultadosTiempo"></div>
-    </div>
-  </details>
-       
-  <input type="checkbox" id="btn-menu">
-  <div class="container-menu">
-    <div class="cont-menu">
-      <nav>
-        <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
-        <a href='caida_libre.html'>Caída Libre</a>
-        <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
-        <a href='parabolico.html'">Movimiento Parabólico</a>
-        <a href='circular.html'">Movimiento Circular</a>
-      </nav>
-      <label for="btn-menu">✖️</label>
-    </div>
-  </div>
-
-  <h1>Simulacion De MRU</h1>
-  <div class="animacion">
-    <div class="animación-mru">
-      <label for="velocity-input">Velocidad (m/s):</label>
-      <input type="number" id="velocity-input-mru" step="0.1">
-      <div class="distance-indicator">Distancia recorrida:<span id="distance-display">0m</span></div>
-      <div class="container_a_mru">
-        <div class="balldmru"></div>
+  <div class="containerall">
+    <div>
+      <div class="section">
+        <h1>Introducción</h1>
+        <p>El movimiento rectilíneo uniforme es un concepto fundamental en la física que describe el movimiento de un cuerpo a lo largo de una línea recta con velocidad constante. En este tipo de movimiento, la velocidad del objeto no cambia en magnitud ni en dirección a lo largo del tiempo dado que su aceleración es nula.El movimiento rectilíneo uniforme se designa frecuentemente con el acrónimo MRU.</p>
+        <p>De acuerdo con la Primera Ley de Newton, toda partícula puntual permanece en reposo o en movimiento rectilíneo uniforme cuando no hay una fuerza externa que actúe sobre el cuerpo, dado que las fuerzas actuales están en equilibrio, por lo cual su estado es de reposo o de movimiento rectilíneo uniforme. </p>
       </div>
-      <button class="botones" onclick="startAnimationMRU()">Iniciar animación MRU</button>
-    </div>
-  </div>
 
-  <h1>Ejercicios De MRU</h1>
-  <div class="outer-container">
-    <div class="container_ejercicio">
-      <h1>Ejercicio 1</h1>
-      <p>Un automóvil viaja a una velocidad constante de 80 km/h. Calcula la distancia que recorre en 2.5 horas.</p>
-      <button class="botones" onclick="mostrarSolucion(1)">Mostrar Solución</button>
-      <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad (v) = 80 km/h = 22.22 m/s.<br>Tiempo (t) = 2.5 horas = 9000 segundos.<br>Fórmula para la distancia (d) en MRU:<br>d = v * t<br>Sustitución de valores:<br>d = 22.22 m/s * 9000 s = 200,000 metros = 200 km</p>
-    </div>
-  </div>
+      <div class="section">
+        <h1>Conceptos básicos</h1>
+        <h2>En el movimiento rectilíneo uniforme, existen varios conceptos clave:</h2>
+        <ul>
+          <li>Distancia (x): Es la posición del objeto a lo largo de la línea recta. Se mide en metros (m).</li>
+          <li>Velocidad (v): Es la magnitud y dirección del desplazamiento del objeto por unidad de tiempo. Se mide en metros por segundo (m/s).</li>
+          <li>Tiempo (t): Es el intervalo de tiempo transcurrido desde el inicio del movimiento. Se mide en segundos (s).</li>
+        </ul>
+      </div>
 
-  <div class="outer-container">
-    <div class="container_ejercicio">
-      <h1>Ejercicio 2</h1>
-      <p>Un ciclista recorre una distancia de 45 kilómetros en 3 horas. Calcula su velocidad promedio en m/s.</p>
-      <button class="botones" onclick="mostrarSolucion(2)">Mostrar Solución</button>
-      <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Distancia (d) = 45 km = 45,000 metros.<br>Tiempo (t) = 3 horas = 10,800 segundos.<br>Fórmula para la velocidad promedio (v) en MRU:<br>v = d / t<br>Sustitución de valores:<br>v = 45,000 m / 10,800 s ≈ 4.17 m/s</p>
+      <div class="section">
+        <h1>Fórmulas</h1>
+        <h3>En el movimiento rectilíneo uniforme, se utilizan las siguientes fórmulas:</h3>
+        <ul>
+          <li>Velocidad (v): v = x / t</li>
+          <li>Distancia (x): x = v * t</li>
+          <li>Tiempo (t): t = d / v</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="outer-container">
-    <div class="container_ejercicio">
-      <h1>Ejercicio 3</h1>
-      <p>Un avión vuela a una velocidad constante de 800 km/h. Si desea recorrer una distancia de 2000 kilómetros, ¿cuánto tiempo le tomará?</p>
-      <button class="botones" onclick="mostrarSolucion(3)">Mostrar Solución</button>
-      <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad (v) = 800 km/h = 222.22 m/s.<br>Distancia (d) = 2000 km = 2,000,000 metros.<br>Fórmula para el tiempo (t) en MRU:<br>t = d / v<br>Sustitución de valores:<br>t = 2,000,000 m / 222.22 m/s ≈ 9000 segundos = 2.5 horas</p>
+    <h1>Calculadoras De MRU</h1>
+    <!-- ------------ velocidad ------------ -->
+    <details>
+      <summary>Calculador De Velocidad</summary>
+      <div class="section">
+        <li>Calculador de velocidad</li>
+        <form id="velocidadForm" onsubmit="calcularVelocidad(event)">
+          <label for="distancia">Distancia (x):</label>
+          <input type="text" id="distancia_mru_v" name="distancia_mru_v">
+          <label for="tiempo">Tiempo (s):</label>
+          <input type="text" id="tiempo_mru_v" name="tiempo_mru_v">
+          <input type="submit" value="Calcular">
+        </form>
+        <div id="resultadosVelocidad"></div>
+      </div>
+    </details>
+
+    <!-- ------------ Distancia ------------ -->
+    <details>
+      <summary>Calculador De Distancia</summary>
+      <div class="section">
+        <li>Calculador de Distancia</li>
+        <form id="distanciaForm" onsubmit="calcularDistancia(event)">
+          <label for="velocidad">Velocidad (m/s):</label>
+          <input type="text" id="velocidad_mru_d" name="velocidad_mru_d" required>
+          <label for="tiempo">Tiempo (s):</label>
+          <input type="text" id="tiempo_mru_d" name="tiempo_mru_d" required>
+          <input type="submit" value="Calcular">
+        </form>
+        <div id="resultadosDistancia"></div>
+      </div>
+    </details>
+
+    <!-- ------------ tiempo ------------ -->
+    <details>
+      <summary>Calculador De Tiempo</summary>
+      <div class="section">
+        <li>Calculador de Tiempo</li>
+        <form id="tiempoForm" onsubmit="calcularTiempo(event)">
+          <label for="distancia">Distancia (x):</label>
+          <input type="text" id="distancia_mru_t" name="distancia_mru_t" required>
+          <label for="velocidad">Velocidad (m/s):</label>
+          <input type="text" id="velocidad_mru_t" name="velocidad_mru_t" required>
+          <input type="submit" value="Calcular">
+        </form>
+        <div id="resultadosTiempo"></div>
+      </div>
+    </details>
+        
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+      <div class="cont-menu">
+        <nav>
+          <a href='rectilineo_uniforme.html'>Movimiento Rectilíneo Uniforme</a>
+          <a href='caida_libre.html'>Caída Libre</a>
+          <a href='rectilineo_acelerado.html'>Movimiento Rectilíneo Acelerado</a>
+          <a href='parabolico.html'">Movimiento Parabólico</a>
+          <a href='circular.html'">Movimiento Circular</a>
+        </nav>
+        <label for="btn-menu">✖️</label>
+      </div>
     </div>
-  </div>
 
-  <button class="botonesV" onclick="window.location.href='index.html'">Volver al menú</button>
-</div>
+    <h1>Simulacion De MRU</h1>
+    <div class="animacion">
+      <div class="animación-mru">
+        <label for="velocity-input">Velocidad (m/s):</label>
+        <input type="number" id="velocity-input-mru" step="0.1">
+        <div class="distance-indicator">Distancia recorrida:<span id="distance-display">0m</span></div>
+        <div class="container_a_mru">
+          <div class="balldmru"></div>
+        </div>
+        <button class="botones" onclick="startAnimationMRU()">Iniciar animación MRU</button>
+      </div>
+    </div>
+
+    <h1>Ejercicios De MRU</h1>
+    <div class="outer-container">
+      <div class="container_ejercicio">
+        <h1>Ejercicio 1</h1>
+        <p>Un automóvil viaja a una velocidad constante de 80 km/h. Calcula la distancia que recorre en 2.5 horas.</p>
+        <button class="botones" onclick="mostrarSolucion(1)">Mostrar Solución</button>
+        <p id="solucion1" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad (v) = 80 km/h = 22.22 m/s.<br>Tiempo (t) = 2.5 horas = 9000 segundos.<br>Fórmula para la distancia (d) en MRU:<br>d = v * t<br>Sustitución de valores:<br>d = 22.22 m/s * 9000 s = 200,000 metros = 200 km</p>
+      </div>
+    </div>
+
+    <div class="outer-container">
+      <div class="container_ejercicio">
+        <h1>Ejercicio 2</h1>
+        <p>Un ciclista recorre una distancia de 45 kilómetros en 3 horas. Calcula su velocidad promedio en m/s.</p>
+        <button class="botones" onclick="mostrarSolucion(2)">Mostrar Solución</button>
+        <p id="solucion2" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Distancia (d) = 45 km = 45,000 metros.<br>Tiempo (t) = 3 horas = 10,800 segundos.<br>Fórmula para la velocidad promedio (v) en MRU:<br>v = d / t<br>Sustitución de valores:<br>v = 45,000 m / 10,800 s ≈ 4.17 m/s</p>
+      </div>
+    </div>
+
+    <div class="outer-container">
+      <div class="container_ejercicio">
+        <h1>Ejercicio 3</h1>
+        <p>Un avión vuela a una velocidad constante de 800 km/h. Si desea recorrer una distancia de 2000 kilómetros, ¿cuánto tiempo le tomará?</p>
+        <button class="botones" onclick="mostrarSolucion(3)">Mostrar Solución</button>
+        <p id="solucion3" style="display: none;"><strong>Solución:</strong><br>Datos:<br>Velocidad (v) = 800 km/h = 222.22 m/s.<br>Distancia (d) = 2000 km = 2,000,000 metros.<br>Fórmula para el tiempo (t) en MRU:<br>t = d / v<br>Sustitución de valores:<br>t = 2,000,000 m / 222.22 m/s ≈ 9000 segundos = 2.5 horas</p>
+      </div>
+    </div>
+
+    <button class="botonesV" onclick="window.location.href='index.html'">Volver al menú</button>
+  </div>
 
   <footer>
     <img src="img/logo iti 2.png" alt="ITI">

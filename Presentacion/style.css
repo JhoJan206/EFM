@@ -1,0 +1,94 @@
+/*base de la pagina web*/
+:root{
+    --background: #fcfcfc;
+    --background2: #e8fae8;
+    --primary: #fac400;
+    --secondary: #0c1431;
+    --accent: #ceae3b;
+    --primary2: #d4a704;
+    --text: #000000d7;
+    --sombras: rgba(0, 0, 0, 0.336);
+    --iti:#1B8332;
+}
+body {
+    margin: 2px;
+    padding: 0;
+    Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+.containerall{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1{
+    color: #1B8332;
+}
+h2{
+    color: var(--text);
+}
+h3{
+    color: var(--text);
+}
+h4{
+    color: var(--text);
+}
+p{
+    color: var(--text);
+    font-size: 18px;
+}
+
+
+/*header*/
+.banda-superior {
+    min-height: 60px;
+    background-color: #ffffff;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: auto;
+    max-height: 70px;
+    box-sizing: border-box; /* Incluye el relleno en el cálculo de la altura */
+    box-shadow: 0px 4px 6px var(--sombras); /* Sombra en la parte inferior */
+}
+
+
+/*footer*/
+footer {
+    height: 100%;
+    margin-top: 40px;
+    background-color: var(--background);
+    border: solid #00000025 1px;
+    box-shadow: 0px 0px 8px 1px var(--sombras);
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+footer img {
+    width: 100px;
+    justify-content: left;
+}
+
+
+/*cartas del menu*/
+.card{
+    width: 240px;
+    max-width: 240px;
+    height: 430px;
+    max-height: 430px;
+    margin: 8px;
+    border: var(--iti) solid 1.5px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: #f6fff4;
+    cursor: pointer;
+}
+.card:hover{
+    background-color:#2928031c;
+}
